@@ -64,7 +64,7 @@ DISEÑO HERO - CINEMAGRAPH
 		
 		<div class="mx-auto text-center py-3 py-lg-5">
 			
-			<a href="registro.html"><button class="btn btn-info btn-lg mb-5">Crear cuenta gratis</button></a>
+			<a href="<?php echo $ruta ?>registro"><button class="btn btn-info btn-lg mb-5">Crear cuenta gratis</button></a>
 
 		</div>	
 		

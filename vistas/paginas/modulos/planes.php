@@ -27,7 +27,7 @@ PLANES
 					<li>5 Descargas</li>
 					<li>24/7 soporte</li>
 
-					<a href="registro.html"><button class="btn btn-info btn-sm px-5 mt-5">Elegir</button></a>
+					<a href="<?php echo $ruta ?>registro"><button class="btn btn-info btn-sm px-5 mt-5">Elegir</button></a>
 				</ul>
 
 	    	</div>
@@ -49,7 +49,7 @@ PLANES
 					<li>5 Descargas</li>
 					<li>24/7 soporte</li>
 
-					<a href="registro.html"><button class="btn btn-info btn-sm px-5 mt-5">Elegir</button></a>
+					<a href="<?php echo $ruta ?>registro"><button class="btn btn-info btn-sm px-5 mt-5">Elegir</button></a>
 				</ul>
 
 	    	</div>

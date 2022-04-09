@@ -1,7 +1,7 @@
 <!--=====================================
 CURSOS
 ======================================-->
-
+href
 <div class="container-fluid cursos" id="cursos">
 	
 	<div class="container my-3">
@@ -16,7 +16,7 @@ CURSOS
 
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque perferendis ad ab dignissimos iste autem consequatur beatae ducimus, ullam eligendi officia alias nesciunt laudantium consequuntur recusandae quisquam saepe, modi accusantium!</p>
 
-				<a href="registro.html"><button class="btn btn-info btn-lg mt-1 mt-lg-3 d-none d-lg-block">Crear cuenta gratis</button></a>
+				<a href="<?php echo $ruta ?>registro"><button class="btn btn-info btn-lg mt-1 mt-lg-3 d-none d-lg-block">Crear cuenta gratis</button></a>
 
 			</div>
 
@@ -52,7 +52,7 @@ CURSOS
 
 				<p class="text-left text-lg-right">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque perferendis ad ab dignissimos iste autem consequatur beatae ducimus, ullam eligendi officia alias nesciunt laudantium consequuntur recusandae quisquam saepe, modi accusantium!</p>
 
-				<a href="registro.html"><button class="float-right btn btn-info btn-lg mt-1 mt-lg-3 text-right d-none d-lg-block">Crear cuenta gratis</button></a>
+				<a href="<?php echo $ruta ?>registro"><button class="float-right btn btn-info btn-lg mt-1 mt-lg-3 text-right d-none d-lg-block">Crear cuenta gratis</button></a>
 
 			</div>
 
@@ -78,7 +78,7 @@ CURSOS
 
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque perferendis ad ab dignissimos iste autem consequatur beatae ducimus, ullam eligendi officia alias nesciunt laudantium consequuntur recusandae quisquam saepe, modi accusantium!</p>
 
-				<a href="registro.html"><button class="btn btn-info btn-lg mt-1 mt-lg-3 d-none d-lg-block">Crear cuenta gratis</button></a>
+				<a href="<?php echo $ruta ?>registro"><button class="btn btn-info btn-lg mt-1 mt-lg-3 d-none d-lg-block">Crear cuenta gratis</button></a>
 
 			</div>
 
@@ -94,7 +94,7 @@ CURSOS
 
 			<div class="d-block d-lg-none mx-auto text-center pt-3">
 			
-				<a href="registro.html"><button class="btn btn-info btn-lg mb-5">Crear cuenta gratis</button></a>
+				<a href="<?php echo $ruta ?>registro"><button class="btn btn-info btn-lg mb-5">Crear cuenta gratis</button></a>
 
 			</div>	
 
