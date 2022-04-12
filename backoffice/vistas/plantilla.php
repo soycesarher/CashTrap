@@ -72,6 +72,7 @@
 
 <div class="wrapper">
 
+
 <?php 
 
 include "paginas/modulos/header.php";
@@ -82,11 +83,32 @@ include "paginas/modulos/menu.php";
 Páginas del sitio
 =============================================*/
 
-include "paginas/inicio.php";
+if(isset($_GET["pagina"])){
+
+  if( $_GET["pagina"] == "inicio" ||
+    $_GET["pagina"] == "perfil" ||
+    $_GET["pagina"] == "usuarios"){
+
+    include "paginas/".$_GET["pagina"].".php";
+
+  }
+
+  if( $_GET["pagina"] == "cuerpo-activo" ||
+    $_GET["pagina"] == "mente-sana" ||
+    $_GET["pagina"] == "espiritu-libre"){
+
+    include "paginas/academia.php";
+  }
+
+}else{
+
+  include "paginas/inicio.php";
+}
+
 
 include "paginas/modulos/footer.php";
 
-?>
+ ?>
 
 </div>
 
