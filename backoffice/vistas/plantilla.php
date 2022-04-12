@@ -37,6 +37,9 @@
     <!-- estilo personalizado -->
     <link rel="stylesheet" href="vistas/css/style.css">
 
+      <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="vistas/css/plugins/OverlayScrollbars.min.css">
+
     <!--=====================================
   Vínculos JS
   ======================================-->
@@ -60,8 +63,8 @@
   <!-- https://www.jqueryscript.net/slider/Carousel-Slideshow-jdSlider.html -->
   <script src="vistas/js/plugins/jdSlider.js"></script>
 
-
-
+  <!-- overlayScrollbars -->
+<script src="vistas/js/plugins/jquery.overlayScrollbars.min.js"></script>
 
 </head>
 
