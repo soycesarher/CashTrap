@@ -1,7 +1,4 @@
 <footer class="main-footer">
-    <strong>Copyright © 2014-2018 <a href="http://adminlte.io">AdminLTE.io</a>.</strong>
-    All rights reserved.
-    <div class="float-right d-none d-sm-inline-block">
-      <b>Version</b> 3.0.0-beta.1
-    </div>
-  </footer>
+  <strong>Copyright © <?php echo date("Y");?> <a href="#">CashTrap</a>.</strong>
+  Tecnm ITTol CashTrap - Taller de Investigacion II.
+</footer>
