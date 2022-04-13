@@ -34,11 +34,11 @@
     <!-- jdSlider -->
   <link rel="stylesheet" href="vistas/css/plugins/jdSlider.css">
 
+  <!-- Select2 -->
+  <link rel="stylesheet" href="vistas/css/plugins/select2.min.css">
+
     <!-- estilo personalizado -->
     <link rel="stylesheet" href="vistas/css/style.css">
-
-      <!-- overlayScrollbars -->
-  <link rel="stylesheet" href="vistas/css/plugins/OverlayScrollbars.min.css">
 
     <!--=====================================
   Vínculos JS
@@ -63,15 +63,25 @@
   <!-- https://www.jqueryscript.net/slider/Carousel-Slideshow-jdSlider.html -->
   <script src="vistas/js/plugins/jdSlider.js"></script>
 
-  <!-- overlayScrollbars -->
-<script src="vistas/js/plugins/jquery.overlayScrollbars.min.js"></script>
+  <!-- Select2 -->  
+  <!-- https://github.com/select2/select2 -->
+  <script src="vistas/js/plugins/select2.full.min.js"></script>
+
+  <!-- InputMask -->  
+  <!-- https://github.com/RobinHerbots/Inputmask -->
+  <script src="vistas/js/plugins/jquery.inputmask.js"></script>
+
+  <!-- jSignature -->
+  <!-- https://www.jqueryscript.net/other/Signature-Field-Plugin-jQuery-jSignature.html -->
+  <script src="vistas/js/plugins/jSignature.js"></script>
+  <script src="vistas/js/plugins/jSignature.CompressorSVG.js"></script>
+
 
 </head>
 
 <body class="hold-transition sidebar-mini sidebar-collapse">
 
 <div class="wrapper">
-
 
 <?php 
 
@@ -87,13 +97,13 @@ if(isset($_GET["pagina"])){
 
   if( $_GET["pagina"] == "inicio" ||
     $_GET["pagina"] == "perfil" ||
-    $_GET["pagina"] == "usuarios"||
+    $_GET["pagina"] == "usuarios" ||
     $_GET["pagina"] == "uninivel" ||
     $_GET["pagina"] == "binaria" ||
-    $_GET["pagina"] == "matriz"||
+    $_GET["pagina"] == "matriz" ||
     $_GET["pagina"] == "ingresos-uninivel" ||
     $_GET["pagina"] == "ingresos-binaria" ||
-    $_GET["pagina"] == "ingresos-matriz"||
+    $_GET["pagina"] == "ingresos-matriz" ||
     $_GET["pagina"] == "plan-compensacion" ||
     $_GET["pagina"] == "soporte" ||
     $_GET["pagina"] == "salir"){
@@ -107,11 +117,11 @@ if(isset($_GET["pagina"])){
     $_GET["pagina"] == "espiritu-libre"){
 
     include "paginas/academia.php";
-  
-  }else{
-    
+  }
+
+  else{
+
     include "paginas/error404.php";
-  
   }
 
 }else{
@@ -119,13 +129,16 @@ if(isset($_GET["pagina"])){
   include "paginas/inicio.php";
 }
 
+
 include "paginas/modulos/footer.php";
 
  ?>
 
 </div>
 
+
 <script src="vistas/js/inicio.js"></script>
+<script src="vistas/js/usuarios.js"></script>
 
 </body>
 
