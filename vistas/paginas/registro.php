@@ -59,7 +59,7 @@
 
 					<form method="post" class="mt-3 px-4" onsubmit="return validarPoliticas()">
 
-						<input type="hidden" value="academy-of-life" name="patrocinador">
+						<input type="hidden" value="cashtrap-afiliado" name="patrocinador">
 
 						<p class="text-center py-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi sunt officia unde officiis</p>
 
