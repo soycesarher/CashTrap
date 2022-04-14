@@ -3,6 +3,7 @@ $ruta = ControladorRuta::ctrRuta()
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 
@@ -51,6 +52,10 @@ $ruta = ControladorRuta::ctrRuta()
 
 	<!-- https://www.jqueryscript.net/loading/Handle-Loading-Progress-jQuery-Nite-Preloader.html -->
 	<script src="js/plugins/jquery.nite.preloader.js"></script>
+
+	<!-- SWEET ALERT 2 -->	
+	<!-- https://sweetalert2.github.io/ -->
+	<script src="js/plugins/sweetalert2.all.js"></script>
 
 </head>
 
