@@ -10,8 +10,6 @@
 				
 					<a href="<?php echo $ruta ?>inicio"><img src="img/logo-positivo.png" class="img-fluid"></a>
 
-					<form class="mt-5">
-
 						<div class="d-flex justify-content-between">
 						
 							<h4>Ingreso al sistema</h4>
@@ -32,11 +30,20 @@
 
 						</div>
 
+						<form method="post" class="mt-5">
+
 						<p class="text-center py-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi sunt officia unde officiis</p>
 
-						<input type="email" class="form-control my-3 py-3" placeholder="Correo Electrónico">
+						<input type="email" class="form-control my-3 py-3" placeholder="Correo Electrónico" name="ingresoEmail" required>
 
-						<input type="password" class="form-control my-3 py-3" placeholder="Contraseña">
+						<input type="password" class="form-control my-3 py-3" placeholder="Contraseña" name="ingresoPassword" required>
+
+						<?php 
+
+							$ingreso = new ControladorUsuarios();
+							$ingreso -> ctrIngresoUsuario();
+
+						?>
 
 						<input type="submit" class="form-control my-3 py-3 btn btn-info" value="Ingresar">
 
