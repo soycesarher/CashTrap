@@ -1,6 +1,10 @@
 <?php
+
+session_start();
 $ruta = ControladorRuta::ctrRuta()
+
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
