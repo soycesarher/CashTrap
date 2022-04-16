@@ -64,10 +64,14 @@ $usuario = ControladorUsuarios::ctrMostrarUsuarios($item, $valor);
   <!-- Select2 -->
   <link rel="stylesheet" href="vistas/css/plugins/select2.min.css">
 
-    <!-- estilo personalizado -->
-    <link rel="stylesheet" href="vistas/css/style.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="vistas/css/plugins/dataTables.bootstrap4.min.css"> 
+  <link rel="stylesheet" href="vistas/css/plugins/responsive.bootstrap.min.css">
 
-    <!--=====================================
+  <!-- estilo personalizado -->
+  <link rel="stylesheet" href="vistas/css/style.css">
+
+  <!--=====================================
   Vínculos JS
   ======================================-->
 
@@ -102,6 +106,17 @@ $usuario = ControladorUsuarios::ctrMostrarUsuarios($item, $valor);
   <!-- https://www.jqueryscript.net/other/Signature-Field-Plugin-jQuery-jSignature.html -->
   <script src="vistas/js/plugins/jSignature.js"></script>
   <script src="vistas/js/plugins/jSignature.CompressorSVG.js"></script>
+
+  <!-- SWEET ALERT 2 -->  
+  <!-- https://sweetalert2.github.io/ -->
+  <script src="vistas/js/plugins/sweetalert2.all.js"></script>
+  
+  <!-- DataTables 
+  https://datatables.net/-->
+  <script src="vistas/js/plugins/jquery.dataTables.min.js"></script>
+  <script src="vistas/js/plugins/dataTables.bootstrap4.min.js"></script> 
+  <script src="vistas/js/plugins/dataTables.responsive.min.js"></script>
+  <script src="vistas/js/plugins/responsive.bootstrap.min.js"></script> 
 
 
 </head>
