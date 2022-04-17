@@ -32,6 +32,7 @@ class AjaxUsuarios{
 	public function ajaxSuscripcion(){
 
 		$ruta = ControladorGeneral::ctrRuta();
+		$valorSuscripcion = ControladorGeneral::ctrValorSuscripcion();
 
 		/*=============================================
 		CREAR EL ACCESS TOKEN CON EL API DE PAYPAL
@@ -112,7 +113,80 @@ class AjaxUsuarios{
 
 				$idProducto = $respuesta2["id"];
 
-				echo $idProducto;
+				/*=============================================
+				CREAR EL PLAN DE PAGOS CON LA API DE PAYPAL
+				=============================================*/
+
+				$curl3 = curl_init();
+
+				curl_setopt_array($curl3, array(
+				  CURLOPT_URL => 'https://api-m.sandbox.paypal.com/v1/billing/plans',
+				  CURLOPT_RETURNTRANSFER => true,
+				  CURLOPT_ENCODING => '',
+				  CURLOPT_MAXREDIRS => 10,
+				  CURLOPT_TIMEOUT => 30,
+				  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+				  CURLOPT_CUSTOMREQUEST => 'POST',
+				  CURLOPT_POSTFIELDS =>'{
+				  "product_id": "'.$idProducto.'",
+				  "name": "Suscripción mensual a Cashtrap",
+				  "description": "Plan de pago mensual a Cashtrap",
+				  "status": "ACTIVE",
+				  "billing_cycles": [
+				    {
+				      "frequency": {
+				        "interval_unit": "MONTH",
+				        "interval_count": 1
+				      },
+				      "tenure_type": "REGULAR",
+				      "sequence": 1,
+				      "total_cycles": 99,
+				      "pricing_scheme": {
+				        "fixed_price": {
+				          "value": "'.$valorSuscripcion.'",
+				          "currency_code": "USD"
+				        }
+				      }
+				    }
+				  ],
+				  "payment_preferences": {
+				    "auto_bill_outstanding": true,
+				    "setup_fee": {
+				      "value": "'.$valorSuscripcion.'",
+				      "currency_code": "USD"
+				    },
+				    "setup_fee_failure_action": "CONTINUE",
+				    "payment_failure_threshold": 3
+				  },
+				  "taxes": {
+				    "percentage": "0",
+				    "inclusive": false
+				  }
+				}',
+				  CURLOPT_HTTPHEADER => array(
+				    'Authorization: Bearer '.$token,
+				    'cache-control: no-cache',
+				    'Content-Type: application/json'
+				  ),
+				));
+
+				$response = curl_exec($curl3);
+				$err = curl_error($curl3);
+
+				curl_close($curl3);
+
+				if ($err){
+					echo "cURL Error #:" . $err;
+				} else {
+
+					$respuesta3 = json_decode($response, true);
+
+					$idPlan = $respuesta3["id"];
+
+					echo $idPlan;
+
+				}
+				
 			}
 
 		}
