@@ -31,9 +31,15 @@ class AjaxUsuarios{
 
 	public function ajaxSuscripcion(){
 
-		$curl = curl_init();
+		$ruta = ControladorGeneral::ctrRuta();
 
-		curl_setopt_array($curl, array(
+		/*=============================================
+		CREAR EL ACCESS TOKEN CON EL API DE PAYPAL
+		=============================================*/
+
+		$curl1 = curl_init();
+
+		curl_setopt_array($curl1, array(
 		  CURLOPT_URL => 'https://api-m.sandbox.paypal.com/v1/oauth2/token',
 		  CURLOPT_RETURNTRANSFER => true,
 		  CURLOPT_ENCODING => '',
@@ -49,10 +55,10 @@ class AjaxUsuarios{
 		  ),
 		));
 
-		$response = curl_exec($curl);
-		$err = curl_error($curl);
+		$response = curl_exec($curl1);
+		$err = curl_error($curl1);
 
-		curl_close($curl);
+		curl_close($curl1);
 
 		if ($err){
 
@@ -60,11 +66,54 @@ class AjaxUsuarios{
 
 		} else {
 
-			$respuesta = json_decode($response, true);
+			$respuesta1 = json_decode($response, true);
 
-			$token = $respuesta["access_token"];
+			$token = $respuesta1["access_token"];
 
-			echo $token;
+			/*=============================================
+			CREAR EL PRODUCTO CON LA API DE PAYPAL
+			=============================================*/
+			
+			$curl2 = curl_init();
+
+			curl_setopt_array($curl2, array(
+			  CURLOPT_URL => 'https://api-m.sandbox.paypal.com/v1/catalogs/products',
+			  CURLOPT_RETURNTRANSFER => true,
+			  CURLOPT_ENCODING => '',
+			  CURLOPT_MAXREDIRS => 10,
+			  CURLOPT_TIMEOUT => 30,
+			  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+			  CURLOPT_CUSTOMREQUEST => 'POST',
+			  CURLOPT_POSTFIELDS =>'{
+			  "name": "Cashtrap",
+			  "description": "Educación en línea",
+			  "type": "DIGITAL",
+			  "category": "EDUCATIONAL_AND_TEXTBOOKS",
+			  "image_url": "'.$ruta.'backoffice/vistas/img/plantilla/icono.png",
+			  "home_url": "'.$ruta.'"
+			}',
+			  CURLOPT_HTTPHEADER => array(
+			    'Authorization: Bearer '.$token,
+			    'cache-control: no-cache',
+			    'Content-Type: application/json',
+			  ),
+			));
+
+			$response = curl_exec($curl2);
+			$err = curl_error($curl2);
+
+			curl_close($curl2);
+
+			if ($err){
+				echo "cURL Error #:" . $err;
+			} else {
+
+				$respuesta2 = json_decode($response, true);
+
+				$idProducto = $respuesta2["id"];
+
+				echo $idProducto;
+			}
 
 		}
 
