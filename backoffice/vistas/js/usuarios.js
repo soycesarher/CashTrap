@@ -70,6 +70,22 @@ $(".repetirFirma").click(function(){
 
 })
 
+/*=============================================
+FUNCIÓN PARA GENERAR COOKIES
+=============================================*/
+
+function crearCookie(nombre, valor, diasExpiracion){
+
+	var hoy = new Date();
+
+	hoy.setTime(hoy.getTime() + (diasExpiracion*24*60*60*1000));
+
+	var fechaExpiracion = "expires=" +hoy.toUTCString();
+
+	document.cookie = nombre + "=" +valor+"; "+fechaExpiracion;
+}
+
+
 
 /*=============================================
 VALIDAR FORMULARIO SUSCRIPCIÓN
@@ -121,7 +137,25 @@ $(".suscribirse").click(function(){
 
 	}else{
 
-		console.log("formulario listo");
+		var datos = new FormData();
+		datos.append("suscripcion", "ok");
+
+		$.ajax({
+
+			url:"ajax/usuarios.ajax.php",
+			method: "POST",
+			data: datos,
+			cache: false,
+			contentType: false,
+			processData: false,
+			success:function(respuesta){
+
+				console.log("respuesta", respuesta);
+
+			}
+
+		})
+
 	}
 	
 
@@ -132,7 +166,21 @@ $(".suscribirse").click(function(){
 TABLA USUARIOS
 =============================================*/
 
+// $.ajax({
+
+// 	url:"ajax/tabla-usuarios.ajax.php",
+// 	success: function(respuesta){
+		
+// 		console.log("respuesta", respuesta);
+// 	}
+
+// });
+
 $(".tablaUsuarios").DataTable({
+	"ajax":"ajax/tabla-usuarios.ajax.php",
+ 	"deferRender": true,
+  	"retrieve": true,
+  	"processing": true,
 	"language": {
 
 	    "sProcessing":     "Procesando...",
@@ -161,3 +209,143 @@ $(".tablaUsuarios").DataTable({
    }
 
 });
+
+/*=============================================
+COPIAR EN EL CLIPBOARD
+=============================================*/
+
+$(".copiarLink").click(function(){
+
+	var temporal = $("<input>");
+
+	$("body").append(temporal);
+
+	temporal.val($("#linkAfiliado").val()).select();
+
+	document.execCommand("copy");
+
+	temporal.remove();
+
+	$(this).parent().parent().after(`
+		
+		<div class="text-muted copiado">Enlace copiado en el portapapeles</div>
+
+	`)
+
+	setTimeout(function(){
+
+		$(".copiado").remove();
+
+	},2000)
+
+})
+
+/*=============================================
+Cancelar Suscripción
+=============================================*/
+
+$(".cancelarSuscripcion").click(function(){
+
+	var idSuscripcion = $(this).attr("idSuscripcion");
+	var idUsuario = $(this).attr("idUsuario");
+
+	swal({
+    	title: '¿Está seguro de cancelar la suscripción?',
+    	text: "¡Si no lo está puede cancelar la acción, recuerde que perderá todo el trabajo que ha hecho con la red pero recibirá el pago de su último mes!",
+    	type: 'warning',
+    	showCancelButton: true,
+    	confirmButtonColor: '#3085d6',
+      	cancelButtonColor: '#d33',
+      	cancelButtonText: 'Cancelar',
+      	confirmButtonText: 'Si, cancelar suscripción!'
+	  }).then(function(result){
+
+	    if(result.value){
+
+	    	var token = null;
+
+	    	var settings1 = {
+			  "async": true,
+			  "crossDomain": true,
+			  "url": "https://api.sandbox.paypal.com/v1/oauth2/token",
+			  "method": "POST",
+			  "headers": {
+			    "content-type": "application/x-www-form-urlencoded",
+			    "authorization": "Basic QVRHd21HZGVxZ2xmS0R4VFpaNkNwUjZFV1VjNWRZcElaUndiX25jcjNvZXRHLVFSWnRQRU1YemY4MlZZZVdpSzg2a1luMjdiVmFOSGtBbFI6RU1sdXZsbVZfQ056QzhXT1p1LTRFSlNfQjBTVkFhWktiNnhjLVgwR2Fob3gtNlFEVE1IS2hJMVEyNnlXaUFuY3pEOG92Q012bFpmMks1TG8=",
+			    "cache-control": "no-cache"
+			  },
+			  "data": {
+			    "grant_type": "client_credentials"
+			  }
+			}
+
+			$.ajax(settings1).done(function (response) {
+			  
+				token = "Bearer "+response["access_token"];
+				
+				var settings2 = {
+				  "async": true,
+				  "crossDomain": true,
+				  "url": "https://api.sandbox.paypal.com/v1/billing/subscriptions/"+idSuscripcion+"/cancel",
+				  "method": "POST",
+				  "headers": {
+				    "content-type": "application/json",
+				    "authorization": token,
+				    "cache-control": "no-cache"
+				  },
+				  "processData": false,
+				  "data": "{\r\n  \"reason\": \"Not satisfied with the service\"\r\n}"
+				}
+
+				$.ajax(settings2).done(function (response) {
+				 
+				 	if(response = "undefined"){
+
+				 		var datos = new FormData();
+						datos.append("idUsuario", idUsuario);
+
+						$.ajax({
+
+							url:"ajax/usuarios.ajax.php",
+							method: "POST",
+							data: datos,
+							cache: false,
+							contentType: false,
+							processData: false,
+							success:function(respuesta){
+								
+								if(respuesta == "ok"){
+
+									swal({
+										type:"success",
+									  	title: "¡Su suscripción ha sido cancelada con éxito!",
+									  	text: "¡Continua disfrutando de nuestro contenido gratuito!",
+									  	showConfirmButton: true,
+										confirmButtonText: "Cerrar"
+									  
+									}).then(function(result){
+
+											if(result.value){   
+											    window.location = ruta+"backoffice/perfil";
+											  } 
+									});
+													
+								}
+
+							}
+
+						})								
+
+				 	}
+
+				});
+
+
+			});
+
+	    }
+
+	})
+
+
+})

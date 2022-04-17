@@ -37,6 +37,8 @@ $usuario = ControladorUsuarios::ctrMostrarUsuarios($item, $valor);
 
     <title>Backoffice | Ventas por suscripción</title>
 
+    <link rel="icon" href="vistas/img/plantilla/icono.png">
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!--=====================================
