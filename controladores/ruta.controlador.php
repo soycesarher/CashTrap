@@ -3,6 +3,6 @@
 class ControladorRuta{
 
 	static public function ctrRuta(){
-		return "https://localhost/cashtrap/";
+		return "http://cashtrap.com/";
 	}
 }
