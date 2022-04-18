@@ -28,11 +28,14 @@ class AjaxUsuarios{
 	=============================================*/
 
 	public $suscripcion;
+	public $nombre;
+	public $email;
 
 	public function ajaxSuscripcion(){
 
 		$ruta = ControladorGeneral::ctrRuta();
 		$valorSuscripcion = ControladorGeneral::ctrValorSuscripcion();
+		$fecha = substr(date("c"), 0, -6)."Z";
 
 		/*=============================================
 		CREAR EL ACCESS TOKEN CON EL API DE PAYPAL
@@ -151,10 +154,6 @@ class AjaxUsuarios{
 				  ],
 				  "payment_preferences": {
 				    "auto_bill_outstanding": true,
-				    "setup_fee": {
-				      "value": "'.$valorSuscripcion.'",
-				      "currency_code": "USD"
-				    },
 				    "setup_fee_failure_action": "CONTINUE",
 				    "payment_failure_threshold": 3
 				  },
@@ -166,7 +165,7 @@ class AjaxUsuarios{
 				  CURLOPT_HTTPHEADER => array(
 				    'Authorization: Bearer '.$token,
 				    'cache-control: no-cache',
-				    'Content-Type: application/json'
+				    'content-Type: application/json'
 				  ),
 				));
 
@@ -183,7 +182,61 @@ class AjaxUsuarios{
 
 					$idPlan = $respuesta3["id"];
 
-					echo $idPlan;
+					$curl4 = curl_init();
+
+					curl_setopt_array($curl4, array(
+					  CURLOPT_URL => 'https://api-m.sandbox.paypal.com/v1/billing/subscriptions?',
+					  CURLOPT_RETURNTRANSFER => true,
+					  CURLOPT_ENCODING => '',
+					  CURLOPT_MAXREDIRS => 10,
+					  CURLOPT_TIMEOUT => 30,
+					  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+					  CURLOPT_CUSTOMREQUEST => 'POST',
+					  CURLOPT_POSTFIELDS =>'{
+					  "plan_id": "'.$idPlan.'",
+					  "start_time": "'.$fecha.'",
+					  "subscriber": {
+					    "name": {
+					      "given_name": "'.$this->nombre.'"
+					    },
+					    "email_address": "'.$this->nombre.'"
+					  },
+					  "application_context": {
+					    "brand_name": "cashtrap",
+					    "locale": "en-US",
+					    "shipping_preference": "SET_PROVIDED_ADDRESS",
+					    "user_action": "SUBSCRIBE_NOW",
+					    "payment_method": {
+					      "payer_selected": "PAYPAL",
+					      "payee_preferred": "IMMEDIATE_PAYMENT_REQUIRED"
+					    },
+					    "return_url": "'.$ruta.'backoffice/index.php?pagina=perfil",
+					    "cancel_url": "'.$ruta.'backoffice/index.php?pagina=perfil"
+					  }
+					}',
+					  CURLOPT_HTTPHEADER => array(
+					  	'Authorization: Bearer '.$token,
+				    	'cache-control: no-cache',
+					    'content-Type: application/json'
+					  ),
+					));
+
+					$response = curl_exec($curl4);
+					$err = curl_error($curl4);
+
+					curl_close($curl4);
+
+					if ($err){
+						echo "cURL Error #:" . $err;
+					} else {
+
+						$respuesta4 = json_decode($response, true);
+
+						$urlPaypal = $respuesta3["links"][0]["href"];
+
+						echo $urlPaypal;
+
+					}
 
 				}
 				
@@ -214,6 +267,8 @@ if(isset($_POST["validarEmail"])){
 if(isset($_POST["suscripcion"]) && $_POST["suscripcion"] == "ok"){
 
 	$paypal = new AjaxUsuarios();
+	$paypal -> nombre = $_POST["nombre"];
+	$paypal -> email = $_POST["email"];
 	$paypal -> ajaxSuscripcion();
 
 }

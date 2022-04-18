@@ -139,6 +139,8 @@ $(".suscribirse").click(function(){
 
 		var datos = new FormData();
 		datos.append("suscripcion", "ok");
+		datos.append("nombre", nombre);
+		datos.append("email", email);
 
 		$.ajax({
 
