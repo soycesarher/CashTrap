@@ -375,6 +375,88 @@ if(isset($_GET["subscription_id"])){
 			$respuesta1 = json_decode($response, true);
 
 			$token = $respuesta1["access_token"];
+
+			/*=============================================
+			VALIDAR EL ESTADO DE LA SUSCRIPCION
+			=============================================*/			
+
+			$curl2 = curl_init();
+
+			curl_setopt_array($curl2, array(
+			  CURLOPT_URL => 'https://api-m.sandbox.paypal.com/v1/billing/subscriptions/'.$_GET["subscription_id"],
+			  CURLOPT_RETURNTRANSFER => true,
+			  CURLOPT_ENCODING => '',
+			  CURLOPT_MAXREDIRS => 10,
+			  CURLOPT_TIMEOUT => 300,
+			  CURLOPT_FOLLOWLOCATION => true,
+			  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+			  CURLOPT_CUSTOMREQUEST => 'GET',
+			  CURLOPT_HTTPHEADER => array(
+			    'Content-Type: application/json',
+			    'Authorization: Bearer '.$token
+			  ),
+			));
+
+			$response = curl_exec($curl2);
+			$err = curl_error($curl2);
+
+			curl_close($curl2);
+
+			if ($err){
+
+				echo "cURL Error #:" . $err;
+
+			} else {
+
+				$respuesta2 = json_decode($response, true);
+
+				/*=============================================
+				APPROVAL_PENDING. La suscripción se crea, pero aún no ha sido aprobada por el comprador.
+				APPROVED. El comprador ha aprobado la suscripción.
+				ACTIVE. La suscripción está activa.
+				SUSPENDED. La suscripción está suspendida.
+				CANCELLED. Se cancela la suscripción.
+				EXPIRED. La suscripción ha caducado.
+				=============================================*/
+
+				$estado = $respuesta2["status"];
+
+				if($estado == "ACTIVE"){
+
+					$paypal = $respuesta2["subscriber"]["email_address"];
+					$suscripcion = 1;
+					$id_suscripcion = $_GET["subscription_id"];
+					$ciclo_pago = 1;
+
+					$fechaInicial = substr($respuesta2["status_update_time"],0,-10);
+					$fechaVencimiento = strtotime('+1 month', strtotime($fechaInicial) );
+					$vencimiento = date("Y-m-d", $fechaVencimiento);
+
+					$enlace_afiliado = $_COOKIE["enlace_afiliado"];
+					$patrocinador = $_COOKIE["patrocinador"];
+					$pais = $_COOKIE["pais"];
+					$codigo_pais = $_COOKIE["codigo_pais"];
+					$telefono_movil = $_COOKIE["telefono_movil"];
+					$firma = $_COOKIE["firma"];
+
+					$datos = array("id_usuario" => $usuario["id_usuario"],
+								"suscripcion" => $suscripcion,
+								"id_suscripcion" => $id_suscripcion,
+								"ciclo_pago" => $ciclo_pago,
+								"vencimiento" => $vencimiento,
+								"enlace_afiliado" => $enlace_afiliado,
+								"patrocinador" => $patrocinador,
+								"paypal" => $paypal,
+								"pais" => $pais,
+								"codigo_pais" => $codigo_pais,
+								"telefono_movil" => $telefono_movil,
+								"firma" => $firma,
+								"fecha_contrato" => $fechaInicial);
+
+					echo '<pre>'; print_r($datos); echo '</pre>';
+				}
+			}
+
 		}
 
 }  

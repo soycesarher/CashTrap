@@ -85,8 +85,6 @@ function crearCookie(nombre, valor, diasExpiracion){
 	document.cookie = nombre + "=" +valor+"; "+fechaExpiracion;
 }
 
-
-
 /*=============================================
 VALIDAR FORMULARIO SUSCRIPCIÓN
 =============================================*/
@@ -136,6 +134,14 @@ $(".suscribirse").click(function(){
 
 
 	}else{
+
+		crearCookie("enlace_afiliado", enlace_afiliado, 1);
+		crearCookie("patrocinador", patrocinador, 1);
+		crearCookie("pais", pais, 1);
+		crearCookie("codigo_pais", codigo_pais, 1);
+		crearCookie("telefono_movil", telefono_movil, 1);
+		crearCookie("red", red, 1);
+		crearCookie("firma", firma[1], 1);
 
 		var datos = new FormData();
 		datos.append("suscripcion", "ok");
