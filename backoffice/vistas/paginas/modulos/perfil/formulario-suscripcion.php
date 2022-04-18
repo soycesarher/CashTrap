@@ -453,7 +453,48 @@ if(isset($_GET["subscription_id"])){
 								"firma" => $firma,
 								"fecha_contrato" => $fechaInicial);
 
-					echo '<pre>'; print_r($datos); echo '</pre>';
+					$iniciarSuscripcion = ControladorUsuarios::ctrIniciarSuscripcion($datos);
+
+					if($iniciarSuscripcion == "ok"){
+
+						echo'<script>
+
+								swal({
+										type:"success",
+									  	title: "¡La suscripción se ha hecho correctamente!",
+									  	text: "¡Bienvenido a nuestro programa de afiliados, ahora puede comenzar a ganar dinero con nosotros, visite nuestro plan de compensación!",
+									  	showConfirmButton: true,
+										confirmButtonText: "Cerrar"
+									  
+								}).then(function(result){
+
+										if(result.value){   
+										    window.location = "'.$ruta.'backoffice/perfil";	
+										  } 
+								});
+
+							</script>';
+					}
+
+				}else{
+
+					echo'<script>
+
+						swal({
+								type:"error",
+							  	title: "¡ERROR AL MOMENTO DE ACTIVAR LA SUSCRIPCION!",
+							  	text: "Ocurrió un error al momento de activar la suscripción, enviar un correo a info@academyoflife.com si han hecho algún desembolso de su dinero",
+							  	showConfirmButton: true,
+								confirmButtonText: "Cerrar"
+							  
+						}).then(function(result){
+
+								if(result.value){   
+								    window.location = "'.$ruta.'backoffice/perfil";	
+								 } 
+						});
+
+					</script>';
 				}
 			}
 

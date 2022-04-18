@@ -357,4 +357,20 @@ Class ControladorUsuarios{
 
 	}
 
+	/*=============================================
+	Iniciar Suscripción
+	=============================================*/
+
+	static public function ctrIniciarSuscripcion($datos){
+
+		$tabla = "usuarios";
+
+		$respuesta = ModeloUsuarios::mdlIniciarSuscripcion($tabla, $datos);
+
+		return $respuesta;
+
+	}
+	
+	
+
 }
