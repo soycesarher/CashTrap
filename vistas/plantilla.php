@@ -7,7 +7,6 @@ $ruta = ControladorRuta::ctrRuta()
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 	<meta charset="UTF-8">
 
@@ -69,12 +68,40 @@ $ruta = ControladorRuta::ctrRuta()
 
 if (isset($_GET['pagina'])) {
 	
-	if ($_GET['pagina'] == "inicio" ||
-		$_GET['pagina'] == "ingreso" ||
-		$_GET['pagina'] == "registro" ) {
+	/*=============================================
+	Enlace de afiliado 
+	=============================================*/
 
-		include "paginas/".$_GET['pagina'].".php";
-		
+	$validarEnlace = ControladorUsuarios::ctrMostrarUsuarios("enlace_afiliado", $_GET["pagina"]);
+
+ 	if(($validarEnlace["enlace_afiliado"] == $_GET["pagina"]) && ($validarEnlace["suscripcion"] == 1)){
+
+ 		setcookie("patrocinador", $validarEnlace["enlace_afiliado"], time() + 4320000, "/" );
+
+ 		include "paginas/inicio.php";
+
+ 	}
+
+	else if( $_GET["pagina"] == "inicio"){
+
+		include "paginas/inicio.php";
+
+	}
+
+	else if( $_GET["pagina"] == "ingreso"){
+
+			include "paginas/ingreso.php";		
+
+	}
+
+	else if( $_GET["pagina"] == "registro"){
+
+			include "paginas/registro.php";		
+
+	}else{
+
+		include "paginas/inicio.php";
+
 	}
 
 }else{

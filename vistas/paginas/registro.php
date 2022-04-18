@@ -59,7 +59,15 @@
 
 					<form method="post" class="mt-3 px-4" onsubmit="return validarPoliticas()">
 
-						<input type="hidden" value="cashtrap-afiliado" name="patrocinador">
+						<?php if (isset($_COOKIE["patrocinador"])): ?>
+
+							<input type="hidden" value="<?php echo $_COOKIE["patrocinador"];?>" name="patrocinador">
+
+						<?php else: ?>
+
+							<input type="hidden" value="cashtrap-afiliado" name="patrocinador">
+
+						<?php endif ?>
 
 						<p class="text-center py-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi sunt officia unde officiis</p>
 
