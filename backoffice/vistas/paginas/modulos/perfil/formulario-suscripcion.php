@@ -334,3 +334,49 @@
 	</div>	
 
 </div>
+
+<?php
+
+if(isset($_GET["subscription_id"])){
+
+	/*=============================================
+		CREAR EL ACCESS TOKEN CON EL API DE PAYPAL
+		=============================================*/
+
+		$curl1 = curl_init();
+
+		curl_setopt_array($curl1, array(
+		  CURLOPT_URL => 'https://api-m.sandbox.paypal.com/v1/oauth2/token',
+		  CURLOPT_RETURNTRANSFER => true,
+		  CURLOPT_ENCODING => '',
+		  CURLOPT_MAXREDIRS => 10,
+		  CURLOPT_TIMEOUT => 300,
+		  CURLOPT_FOLLOWLOCATION => true,
+		  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+		  CURLOPT_CUSTOMREQUEST => 'POST',
+		  CURLOPT_POSTFIELDS => 'grant_type=client_credentials',
+		  CURLOPT_HTTPHEADER => array(
+		    'Authorization: Basic QVlVU2U1SEN0NUk2dV9DOGhFaU4ydThPWmRTMHp0bndiMjItcWs4MXFmNWVYOWNCdjlJNFlYSzBMMkdkc3ZqcklTY1dnMURTNHgybE9wZjA6RUdPcDBlVzN5THYxNUxFeC10NllxZkFqU2FpR0xOZjVBZ2hBdjdGT2VXNkxuazc1WUdVcEJtS3ZMMUFtWXAwRFQyd182bl8tcnRpaTR0V0Q=',
+		    'content-Type: application/x-www-form-urlencoded'
+		  ),
+		));
+
+		$response = curl_exec($curl1);
+		$err = curl_error($curl1);
+
+		curl_close($curl1);
+
+		if ($err){
+
+			echo "cURL Error #:" . $err;
+
+		} else {
+
+			$respuesta1 = json_decode($response, true);
+
+			$token = $respuesta1["access_token"];
+		}
+
+}  
+
+?>

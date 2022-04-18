@@ -49,12 +49,12 @@ class AjaxUsuarios{
 		  CURLOPT_ENCODING => '',
 		  CURLOPT_MAXREDIRS => 10,
 		  CURLOPT_TIMEOUT => 300,
+		  CURLOPT_FOLLOWLOCATION => true,
 		  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
 		  CURLOPT_CUSTOMREQUEST => 'POST',
 		  CURLOPT_POSTFIELDS => 'grant_type=client_credentials',
 		  CURLOPT_HTTPHEADER => array(
 		    'Authorization: Basic QVlVU2U1SEN0NUk2dV9DOGhFaU4ydThPWmRTMHp0bndiMjItcWs4MXFmNWVYOWNCdjlJNFlYSzBMMkdkc3ZqcklTY1dnMURTNHgybE9wZjA6RUdPcDBlVzN5THYxNUxFeC10NllxZkFqU2FpR0xOZjVBZ2hBdjdGT2VXNkxuazc1WUdVcEJtS3ZMMUFtWXAwRFQyd182bl8tcnRpaTR0V0Q=',
-		    'cache-control: no-cache',
 		    'content-Type: application/x-www-form-urlencoded'
 		  ),
 		));
@@ -86,6 +86,7 @@ class AjaxUsuarios{
 			  CURLOPT_ENCODING => '',
 			  CURLOPT_MAXREDIRS => 10,
 			  CURLOPT_TIMEOUT => 30,
+			  CURLOPT_FOLLOWLOCATION => true,
 			  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
 			  CURLOPT_CUSTOMREQUEST => 'POST',
 			  CURLOPT_POSTFIELDS =>'{
@@ -97,9 +98,8 @@ class AjaxUsuarios{
 			  "home_url": "'.$ruta.'"
 			}',
 			  CURLOPT_HTTPHEADER => array(
-			    'Authorization: Bearer '.$token,
-			    'cache-control: no-cache',
 			    'Content-Type: application/json',
+				'Authorization: Bearer '.$token
 			  ),
 			));
 
@@ -128,6 +128,7 @@ class AjaxUsuarios{
 				  CURLOPT_ENCODING => '',
 				  CURLOPT_MAXREDIRS => 10,
 				  CURLOPT_TIMEOUT => 30,
+				  CURLOPT_FOLLOWLOCATION => true,
 				  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
 				  CURLOPT_CUSTOMREQUEST => 'POST',
 				  CURLOPT_POSTFIELDS =>'{
@@ -163,9 +164,8 @@ class AjaxUsuarios{
 				  }
 				}',
 				  CURLOPT_HTTPHEADER => array(
-				    'Authorization: Bearer '.$token,
-				    'cache-control: no-cache',
-				    'content-Type: application/json'
+				    'Content-Type: application/json',
+					'Authorization: Bearer '.$token
 				  ),
 				));
 
@@ -190,6 +190,7 @@ class AjaxUsuarios{
 					  CURLOPT_ENCODING => '',
 					  CURLOPT_MAXREDIRS => 10,
 					  CURLOPT_TIMEOUT => 30,
+					  CURLOPT_FOLLOWLOCATION => true,
 					  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
 					  CURLOPT_CUSTOMREQUEST => 'POST',
 					  CURLOPT_POSTFIELDS =>'{
@@ -199,7 +200,7 @@ class AjaxUsuarios{
 					    "name": {
 					      "given_name": "'.$this->nombre.'"
 					    },
-					    "email_address": "'.$this->nombre.'"
+					    "email_address": "'.$this->email.'"
 					  },
 					  "application_context": {
 					    "brand_name": "cashtrap",
@@ -215,11 +216,11 @@ class AjaxUsuarios{
 					  }
 					}',
 					  CURLOPT_HTTPHEADER => array(
-					  	'Authorization: Bearer '.$token,
-				    	'cache-control: no-cache',
-					    'content-Type: application/json'
+					    'Content-Type: application/json',
+					    'Authorization: Bearer '.$token
 					  ),
 					));
+
 
 					$response = curl_exec($curl4);
 					$err = curl_error($curl4);
@@ -232,7 +233,7 @@ class AjaxUsuarios{
 
 						$respuesta4 = json_decode($response, true);
 
-						$urlPaypal = $respuesta3["links"][0]["href"];
+						$urlPaypal = $respuesta4["links"][0]["href"];
 
 						echo $urlPaypal;
 
