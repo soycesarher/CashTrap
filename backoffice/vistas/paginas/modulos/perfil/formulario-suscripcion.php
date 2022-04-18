@@ -378,8 +378,10 @@
 		</div>
 
 		<div class="card-footer">
-
+			<!--
 			<a href="<?php echo $ruta ?>backoffice/extensiones/TCPDF-master/examples/contrato.php?usuario=<?php echo $usuario["id_usuario"] ?>" class="btn btn-dark float-left" target="_blank">Descargar Contrato</a>
+			-->
+			<a href="<?php echo $ruta ?>politicas-de-privacidad.pdf" class="btn btn-dark float-left" target="_blank">Descargar Contrato</a>
 
 			<button class="btn btn-danger float-right cancelarSuscripcion" idUsuario="<?php echo $usuario["id_usuario"]?>" idSuscripcion="<?php echo $usuario["id_suscripcion"]?>">Cancelar suscripción</button>
 

@@ -1,10 +1,8 @@
 <?php 
-
 $item = null;
 $valor = null;
 $usuarios = ControladorUsuarios::ctrMostrarusuarios($item, $valor);
 //echo '<pre>'; print_r($usuarios); echo '</pre>';
-
 ?>
 
 

@@ -1,7 +1,5 @@
 <?php 
-
 session_start();
-
 $ruta = ControladorGeneral::ctrRuta();
 $valorSuscripcion = ControladorGeneral::ctrValorSuscripcion();
 $patrocinador = ControladorGeneral::ctrPatrocinador();
