@@ -289,9 +289,8 @@ $(".cancelarSuscripcion").click(function(){
 			  "url": "https://api.sandbox.paypal.com/v1/oauth2/token",
 			  "method": "POST",
 			  "headers": {
-			    "content-type": "application/x-www-form-urlencoded",
-			    "authorization": "Basic QVRHd21HZGVxZ2xmS0R4VFpaNkNwUjZFV1VjNWRZcElaUndiX25jcjNvZXRHLVFSWnRQRU1YemY4MlZZZVdpSzg2a1luMjdiVmFOSGtBbFI6RU1sdXZsbVZfQ056QzhXT1p1LTRFSlNfQjBTVkFhWktiNnhjLVgwR2Fob3gtNlFEVE1IS2hJMVEyNnlXaUFuY3pEOG92Q012bFpmMks1TG8=",
-			    "cache-control": "no-cache"
+			  "authorization": "Basic QVlVU2U1SEN0NUk2dV9DOGhFaU4ydThPWmRTMHp0bndiMjItcWs4MXFmNWVYOWNCdjlJNFlYSzBMMkdkc3ZqcklTY1dnMURTNHgybE9wZjA6RUdPcDBlVzN5THYxNUxFeC10NllxZkFqU2FpR0xOZjVBZ2hBdjdGT2VXNkxuazc1WUdVcEJtS3ZMMUFtWXAwRFQyd182bl8tcnRpaTR0V0Q=",
+		    "content-Type": "application/x-www-form-urlencoded"
 			  },
 			  "data": {
 			    "grant_type": "client_credentials"
@@ -301,11 +300,11 @@ $(".cancelarSuscripcion").click(function(){
 			$.ajax(settings1).done(function (response) {
 			  
 				token = "Bearer "+response["access_token"];
-				
+
 				var settings2 = {
 				  "async": true,
 				  "crossDomain": true,
-				  "url": "https://api.sandbox.paypal.com/v1/billing/subscriptions/"+idSuscripcion+"/cancel",
+				  "url": "https://api-m.sandbox.paypal.com/v1/billing/subscriptions/"+idSuscripcion+"/cancel",
 				  "method": "POST",
 				  "headers": {
 				    "content-type": "application/json",
@@ -317,8 +316,8 @@ $(".cancelarSuscripcion").click(function(){
 				}
 
 				$.ajax(settings2).done(function (response) {
-				 
-				 	if(response = "undefined"){
+
+					if(response = "undefined"){
 
 				 		var datos = new FormData();
 						datos.append("idUsuario", idUsuario);
@@ -345,7 +344,7 @@ $(".cancelarSuscripcion").click(function(){
 									}).then(function(result){
 
 											if(result.value){   
-											    window.location = ruta+"backoffice/perfil";
+											    window.location = "http://cashtrap.com/backoffice/perfil";
 											  } 
 									});
 													
@@ -359,12 +358,10 @@ $(".cancelarSuscripcion").click(function(){
 
 				});
 
-
 			});
 
-	    }
+	  }
 
 	})
-
 
 })

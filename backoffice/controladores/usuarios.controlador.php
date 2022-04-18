@@ -370,6 +370,27 @@ Class ControladorUsuarios{
 		return $respuesta;
 
 	}
+
+	/*=============================================
+	Cancelar Suscripción
+	=============================================*/
+
+	static public function ctrCancelarSuscripcion($valor){
+
+		$tabla = "usuarios";
+
+		$datos = array(	"id_usuario" => $valor,
+						"suscripcion" => 0,
+						"ciclo_pago" => null,
+						"firma" => null,
+						"fecha_contrato" => null);
+
+
+		$respuesta = ModeloUsuarios::mdlCancelarSuscripcion($tabla, $datos);
+
+		return $respuesta;
+
+	}
 	
 	
 

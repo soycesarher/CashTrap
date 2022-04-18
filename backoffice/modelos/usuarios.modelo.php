@@ -127,6 +127,36 @@ class ModeloUsuarios{
 
 		$stmt = null;
 	}
+
+	/*=============================================
+	Cancelar Suscripción
+	=============================================*/
+
+	static public function mdlCancelarSuscripcion($tabla, $datos){
+
+		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET  suscripcion = :suscripcion, ciclo_pago = :ciclo_pago, firma = :firma, fecha_contrato = :fecha_contrato WHERE id_usuario = :id_usuario");
+
+		$stmt -> bindParam(":suscripcion", $datos["suscripcion"], PDO::PARAM_STR);
+		$stmt -> bindParam(":ciclo_pago", $datos["ciclo_pago"], PDO::PARAM_STR);
+		$stmt -> bindParam(":firma", $datos["firma"], PDO::PARAM_STR);
+		$stmt -> bindParam(":fecha_contrato", $datos["fecha_contrato"], PDO::PARAM_STR);
+		$stmt -> bindParam(":id_usuario", $datos["id_usuario"], PDO::PARAM_INT);
+
+		if($stmt -> execute()){
+
+			return "ok";
+
+		}else{
+
+			return print_r(Conexion::conectar()->errorInfo());		
+
+		}
+
+		$stmt-> close();
+
+		$stmt = null;
+
+	}
 	
 	
 }

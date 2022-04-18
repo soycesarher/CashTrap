@@ -247,6 +247,21 @@ class AjaxUsuarios{
 
 	}
 
+	/*=============================================
+	Cancelar Suscrpción
+	=============================================*/	
+	public $idUsuario;
+
+	public function ajaxCancelarSuscripcion(){
+
+		$valor = $this->idUsuario;
+
+		$respuesta = ControladorUsuarios::ctrCancelarSuscripcion($valor);
+
+		echo $respuesta;
+
+	}
+
 }
 
 /*=============================================
@@ -271,6 +286,18 @@ if(isset($_POST["suscripcion"]) && $_POST["suscripcion"] == "ok"){
 	$paypal -> nombre = $_POST["nombre"];
 	$paypal -> email = $_POST["email"];
 	$paypal -> ajaxSuscripcion();
+
+}
+
+/*=============================================
+Cancelar Suscrpción
+=============================================*/	
+
+if(isset($_POST["idUsuario"])){
+
+	$cancelarSuscripcion = new AjaxUsuarios();
+	$cancelarSuscripcion -> idUsuario = $_POST["idUsuario"];
+	$cancelarSuscripcion -> ajaxCancelarSuscripcion();
 
 }
 
