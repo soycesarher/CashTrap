@@ -1,3 +1,5 @@
+<?php if ($usuario["suscripcion"] == 0): ?>
+
 <div class="col-12 col-md-8">
 	
 	<div class="card card-primary card-outline">
@@ -6,7 +8,7 @@
 			
 			<h5 class="m-0 text-uppercase text-secondary">
 				
-				<strong>Suscripción mensual $10</strong>
+				<strong>Suscripcion mensual $<?php echo $valorSuscripcion ?></strong>
 
 			</h5>
 
@@ -334,6 +336,60 @@
 	</div>	
 
 </div>
+
+<?php else: ?>
+
+<div class="col-12 col-md-8">
+
+	<div class="card card-primary card-outline">
+
+		<div class="card-header">
+
+			<h5 class="m-0 text-uppercase text-secondary float-left"><b>Suscripción: Activa</b></h5>
+
+			<span class="m-0 text-secondary float-right">Renovación automática el <?php echo $usuario["vencimiento"]; ?></span>
+
+		</div>
+
+		<div class="card-body">
+
+			<h6 class="pb-2">Comparte tu enlace de afiliado:</h6>
+
+			<div class="input-group"> 
+				<div class="input-group-prepend">
+					<span class="p-2 bg-info rounded-left copiarLink" style="cursor:pointer">Copiar</span>
+				</div>
+				<input type="text" class="form-control" id="linkAfiliado" value="<?php echo $ruta.$usuario["enlace_afiliado"]; ?>" readonly>
+			</div>
+
+			<h6 class="pt-3 pb-2">Cuenta de PayPal donde recibirá los pagos de comisiones:</h6>
+
+			<div class="input-group"> 
+
+				<div class="input-group-prepend">
+					<span class="p-2 bg-primary rounded-left"><i class="fab fa-paypal"></i></span>
+				</div>
+				
+				<input type="text" class="form-control" id="correoPaypal" value="<?php echo $usuario["paypal"]; ?>" readonly>
+
+			</div>
+
+
+		</div>
+
+		<div class="card-footer">
+
+			<a href="<?php echo $ruta ?>backoffice/extensiones/TCPDF-master/examples/contrato.php?usuario=<?php echo $usuario["id_usuario"] ?>" class="btn btn-dark float-left" target="_blank">Descargar Contrato</a>
+
+			<button class="btn btn-danger float-right cancelarSuscripcion" idUsuario="<?php echo $usuario["id_usuario"]?>" idSuscripcion="<?php echo $usuario["id_suscripcion"]?>">Cancelar suscripción</button>
+
+		</div>
+
+	</div>					
+
+</div>
+
+<?php endif ?>
 
 <?php
 
