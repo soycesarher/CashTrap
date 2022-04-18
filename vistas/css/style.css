@@ -347,6 +347,18 @@ input[type="checkbox"]:checked + label[for="politicas"] span{
 	border:1px solid #fff;
 }
 
+/*=============================================
+COOKIES
+=============================================*/
+
+.cookies{
+	position: fixed;
+	bottom:-5%;
+	display:none;
+}
+
+
+
 
 
 /*=============================================

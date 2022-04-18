@@ -25,6 +25,7 @@ $usuario = ControladorUsuarios::ctrMostrarUsuarios($item, $valor);
 
 ?>
 
+
 <!DOCTYPE html>
 
 <html>
@@ -35,7 +36,7 @@ $usuario = ControladorUsuarios::ctrMostrarUsuarios($item, $valor);
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Backoffice | Ventas por suscripción</title>
+    <title>Backoffice | Cashtrap</title>
 
     <link rel="icon" href="vistas/img/plantilla/icono.png">
 
@@ -70,10 +71,10 @@ $usuario = ControladorUsuarios::ctrMostrarUsuarios($item, $valor);
   <link rel="stylesheet" href="vistas/css/plugins/dataTables.bootstrap4.min.css"> 
   <link rel="stylesheet" href="vistas/css/plugins/responsive.bootstrap.min.css">
 
-  <!-- estilo personalizado -->
-  <link rel="stylesheet" href="vistas/css/style.css">
+    <!-- estilo personalizado -->
+    <link rel="stylesheet" href="vistas/css/style.css">
 
-  <!--=====================================
+    <!--=====================================
   Vínculos JS
   ======================================-->
 
@@ -115,10 +116,12 @@ $usuario = ControladorUsuarios::ctrMostrarUsuarios($item, $valor);
   
   <!-- DataTables 
   https://datatables.net/-->
-  <script src="vistas/js/plugins/jquery.dataTables.min.js"></script>
-  <script src="vistas/js/plugins/dataTables.bootstrap4.min.js"></script> 
+    <script src="vistas/js/plugins/jquery.dataTables.min.js"></script>
+    <script src="vistas/js/plugins/dataTables.bootstrap4.min.js"></script> 
   <script src="vistas/js/plugins/dataTables.responsive.min.js"></script>
-  <script src="vistas/js/plugins/responsive.bootstrap.min.js"></script> 
+    <script src="vistas/js/plugins/responsive.bootstrap.min.js"></script> 
+
+
 
 
 </head>

@@ -198,8 +198,8 @@ TABLA USUARIOS
 $(".tablaUsuarios").DataTable({
 	"ajax":"ajax/tabla-usuarios.ajax.php",
  	"deferRender": true,
-  	"retrieve": true,
-  	"processing": true,
+  "retrieve": true,
+  "processing": true,
 	"language": {
 
 	    "sProcessing":     "Procesando...",

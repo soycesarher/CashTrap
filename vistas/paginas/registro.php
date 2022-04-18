@@ -82,7 +82,7 @@
 							<input type="checkbox" id="politicas" class="form-check-input">
 
 								<label class="form-check-label" for="politicas">
-							Para registrarse debe aceptar nuestras <a href="#">políticas de privacidad</a> <span></span>
+							Para registrarse debe aceptar nuestras <a href="<?php echo $ruta ?>politicas-de-privacidad.pdf" target="_blank">políticas de privacidad</a> <span></span>
 							</label>
 
 						</div>

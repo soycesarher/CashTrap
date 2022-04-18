@@ -74,35 +74,39 @@ if (isset($_GET['pagina'])) {
 
 	$validarEnlace = ControladorUsuarios::ctrMostrarUsuarios("enlace_afiliado", $_GET["pagina"]);
 
- 	if(($validarEnlace["enlace_afiliado"] == $_GET["pagina"]) && ($validarEnlace["suscripcion"] == 1)){
+	if(is_array($validarEnlace)){
 
- 		setcookie("patrocinador", $validarEnlace["enlace_afiliado"], time() + 4320000, "/" );
+	 	if(($validarEnlace["enlace_afiliado"] == $_GET["pagina"]) && ($validarEnlace["suscripcion"] == 1)){
 
- 		include "paginas/inicio.php";
+	 		setcookie("patrocinador", $validarEnlace["enlace_afiliado"], time() + 4320000, "/" );
 
- 	}
+	 		include "paginas/inicio.php";
 
-	else if( $_GET["pagina"] == "inicio"){
-
-		include "paginas/inicio.php";
-
+	 	}
 	}
+		//posiblemente se tenga que quitar else
+		
+	 	else if( $_GET["pagina"] == "inicio"){
 
-	else if( $_GET["pagina"] == "ingreso"){
+			include "paginas/inicio.php";
 
-			include "paginas/ingreso.php";		
+		}
 
-	}
+		else if( $_GET["pagina"] == "ingreso"){
 
-	else if( $_GET["pagina"] == "registro"){
+				include "paginas/ingreso.php";		
 
-			include "paginas/registro.php";		
+		}
 
-	}else{
+		else if( $_GET["pagina"] == "registro"){
 
-		include "paginas/inicio.php";
+				include "paginas/registro.php";		
 
-	}
+		}else{
+
+			include "paginas/inicio.php";
+
+		}
 
 }else{
 
@@ -111,6 +115,20 @@ if (isset($_GET['pagina'])) {
 		
 ?>
 
+<?php if (!isset($_COOKIE["ver_cookies"])): ?>
+
+<div class="jumbotron bg-white w-100 text-center py-4 shadow-lg cookies">	
+
+	<p>Este sitio web utiliza cookies para garantizar que obtenga la mejor experiencia al navegar nuestro sitio.
+	<a href="<?php echo $ruta; ?>politicas-de-privacidad.pdf" target="_blank">Leer más</a>
+	</p>
+	<button class="btn btn-info btn-sm px-5">Ok</button>
+
+</div>
+
+<?php endif ?>
+
+<input type="hidden" value="<?php echo $ruta; ?>" id="ruta">
 <script src="js/script.js"></script>
 
 </body>

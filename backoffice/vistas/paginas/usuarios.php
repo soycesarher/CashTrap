@@ -1,45 +1,57 @@
 <?php 
 
-$usuarios = ControladorUsuarios::ctrMostrarUsuarios(null, null);
+$item = null;
+$valor = null;
+$usuarios = ControladorUsuarios::ctrMostrarusuarios($item, $valor);
+//echo '<pre>'; print_r($usuarios); echo '</pre>';
 
 ?>
 
-<div class="content-wrapper" style="min-height: 1060.14px;">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1>Usuarios</h1>
-          </div>
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="inicio">Inicio</a></li>
-              <li class="breadcrumb-item active">Usuarios</li>
-            </ol>
-          </div>
+
+<div class="content-wrapper" style="min-height: 1058.31px;">
+  
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+    
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1>Usuarios</h1>
         </div>
-      </div><!-- /.container-fluid -->
-    </section>
-
-    <!-- Main content -->
-    <section class="content">
-
-      <!-- Default box -->
-      <div class="card">
-        <div class="card-header">
-          <h3 class="card-title">Usuarios registrados</h3>
-
-          <div class="card-tools">
-            <button type="button" class="btn btn-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
-              <i class="fas fa-minus"></i></button>
-            <button type="button" class="btn btn-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
-              <i class="fas fa-times"></i></button>
-          </div>
+        <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="inicio">Inicio</a></li>
+            <li class="breadcrumb-item active">Usuarios</li>
+          </ol>
         </div>
-        <div class="card-body">
+      </div>
+    </div><!-- /.container-fluid -->
 
-          <table class="table table-striped table-bordered dt-responsive tablaUsuarios" width="100%">
+  </section>
+
+  <!-- Main content -->
+  <section class="content">
+
+    <!-- Default box -->
+    <div class="card">
+      
+      <div class="card-header">
+
+        <h3 class="card-title">Usuarios registrados</h3>
+
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
+          <i class="fas fa-minus"></i></button>
+          <button type="button" class="btn btn-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
+          <i class="fas fa-times"></i></button>
+        </div>
+
+      </div>
+
+      <div class="card-body">
+        
+        <!-- <table class="table table-striped table-bordered dt-responsive tablaUsuarios"> -->
+        <table class="table table-striped table-bordered">
 
           <thead>
             <tr>
@@ -58,12 +70,11 @@ $usuarios = ControladorUsuarios::ctrMostrarUsuarios(null, null);
               <th>Fecha de vencimiento</th>
             </tr>
           </thead>
-
           <tbody>
 
-           <?php foreach ($usuarios as $key => $value): ?>
+            <?php foreach ($usuarios as $key => $value): ?>
 
-             <tr>
+              <tr>
               <td><?php echo($key+1); ?></td>
               <td><img src="<?php echo $value["foto"]?>" class="img-fluid" width="30px"></td>
               <td><?php echo $value["nombre"]?></td>
@@ -78,21 +89,24 @@ $usuarios = ControladorUsuarios::ctrMostrarUsuarios(null, null);
               <td><?php echo $value["fecha"]?></td>
               <td><?php echo $value["vencimiento"]?></td>
             </tr>
-            
-          <?php endforeach ?> 
-
+              
+            <?php endforeach ?>
+        
           </tbody>
         </table>
 
-        </div>
-        <!-- /.card-body -->
-        <div class="card-footer">
-          Footer
-        </div>
-        <!-- /.card-footer-->
       </div>
-      <!-- /.card -->
+      <!-- /.card-body -->
 
-    </section>
-    <!-- /.content -->
-  </div>
+      <div class="card-footer">
+        Footer
+      </div>
+        <!-- /.card-footer-->
+
+    </div>
+    <!-- /.card -->
+
+  </section>
+  <!-- /.content -->
+
+</div>
