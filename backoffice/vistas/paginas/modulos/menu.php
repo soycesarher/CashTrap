@@ -32,6 +32,10 @@
 
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
+        <!--=====================================
+        Botón Inicio
+        ======================================-->
+
         <li class="nav-item">
           <a href="inicio" class="nav-link">
             <i class="nav-icon fas fa-home"></i>
@@ -39,12 +43,20 @@
           </a>
         </li>
 
+        <!--=====================================
+        Botón Mi Perfil
+        ======================================-->
+
         <li class="nav-item">
           <a href="perfil" class="nav-link">
             <i class="nav-icon fas fa-user"></i>
             <p>Mi perfil</p>
           </a>
         </li>
+
+        <!--=====================================
+        Botón Usuarios
+        ======================================-->
 
         <?php if ($usuario["perfil"] == "admin"): ?>
 
@@ -57,7 +69,10 @@
           
         <?php endif ?>
 
-      
+
+        <!--=====================================
+        Botón Academia
+        ======================================-->
 
         <li class="nav-item has-treeview">
           <a href="#" class="nav-link">
@@ -68,26 +83,30 @@
             </p>
           </a>
           <ul class="nav nav-treeview">
-            <li class="nav-item">
-              <a href="cuerpo-activo" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Cuerpo Activo</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="mente-sana" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Mente Sana</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="espiritu-libre" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Espíritu Libre</p>
-              </a>
-            </li>
+
+            <?php  
+
+            $categorias = ControladorAcademia::ctrMostrarCategorias(null, null);
+
+            foreach ($categorias as $key => $value) {
+
+              echo '  <li class="nav-item">
+                        <a href="'.$value["ruta_categoria"].'" class="nav-link">
+                          <i class="'.$value["icono_categoria"].' nav-icon"></i>
+                          <p>'.$value["nombre_categoria"].'</p>
+                        </a>
+                      </li>';
+             
+            }
+
+            ?>   
+           
           </ul>
         </li>
+
+        <!--=====================================
+        Botón Redes Multinivel
+        ======================================-->
 
         <li class="nav-item has-treeview">
           <a href="#" class="nav-link">
@@ -119,6 +138,10 @@
           </ul>
         </li>
 
+       <!--=====================================
+        Botón Ingresos
+        ======================================-->
+
          <li class="nav-item has-treeview">
           <a href="#" class="nav-link">
             <i class="nav-icon fas fa-money-check-alt"></i>
@@ -149,12 +172,20 @@
           </ul>
         </li>
 
+        <!--=====================================
+        Botón Plan de compensación
+        ======================================-->
+
         <li class="nav-item">
           <a href="plan-compensacion" class="nav-link">
             <i class="nav-icon fas fa-gem"></i>
             <p>Plan de compensación</p>
           </a>
         </li>
+
+       <!--=====================================
+        Botón Soporte
+        ======================================-->
 
         <li class="nav-item">
           <a href="soporte" class="nav-link">
@@ -163,15 +194,16 @@
           </a>
         </li>
 
+        <!--=====================================
+        Botón Salir
+        ======================================-->
+
         <li class="nav-item">
           <a href="salir" class="nav-link">
             <i class="nav-icon fas fa-sign-out-alt"></i>
             <p>Cerrar sesión</p>
           </a>
         </li>
-
-
-
 
       </ul>
 

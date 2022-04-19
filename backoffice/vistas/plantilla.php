@@ -140,6 +140,19 @@ Páginas del sitio
 
 if(isset($_GET["pagina"])){
 
+  $categorias = ControladorAcademia::ctrMostrarCategorias(null, null);
+  $paginaAcademia = null;
+
+  foreach ($categorias as $key => $value) {
+    
+    if( $_GET["pagina"] == $value["ruta_categoria"]){
+
+      $paginaAcademia = $value["ruta_categoria"];
+
+    }
+  }
+
+
   if( $_GET["pagina"] == "inicio" ||
     $_GET["pagina"] == "perfil" ||
     $_GET["pagina"] == "usuarios" ||
@@ -157,9 +170,7 @@ if(isset($_GET["pagina"])){
 
   }
 
-  else if( $_GET["pagina"] == "cuerpo-activo" ||
-    $_GET["pagina"] == "mente-sana" ||
-    $_GET["pagina"] == "espiritu-libre"){
+  else if( $_GET["pagina"] == $paginaAcademia){
 
     include "paginas/academia.php";
   }
