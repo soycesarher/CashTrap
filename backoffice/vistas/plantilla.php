@@ -116,10 +116,12 @@ $usuario = ControladorUsuarios::ctrMostrarUsuarios($item, $valor);
   https://datatables.net/-->
     <script src="vistas/js/plugins/jquery.dataTables.min.js"></script>
     <script src="vistas/js/plugins/dataTables.bootstrap4.min.js"></script> 
-  <script src="vistas/js/plugins/dataTables.responsive.min.js"></script>
+    <script src="vistas/js/plugins/dataTables.responsive.min.js"></script>
     <script src="vistas/js/plugins/responsive.bootstrap.min.js"></script> 
 
-
+  <!-- HLS -->
+  <!-- https://poanchen.github.io/blog/2016/11/17/how-to-play-mp4-video-using-hls -->
+  <script src="vistas/js/plugins/hls.min.js"></script>
 
 
 </head>
