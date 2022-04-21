@@ -51,15 +51,15 @@ $usuario = ControladorUsuarios::ctrMostrarUsuarios($item, $valor);
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
   <!-- Google Font: Source Sans Pro -->
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
-    <!-- Theme style -->
-    <link rel="stylesheet" href="vistas/css/plugins/adminlte.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="vistas/css/plugins/adminlte.min.css">
 
-    <!-- overlayScrollbars -->
-    <link rel="stylesheet" href="vistas/css/plugins/OverlayScrollbars.min.css">
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="vistas/css/plugins/OverlayScrollbars.min.css">
 
-    <!-- jdSlider -->
+  <!-- jdSlider -->
   <link rel="stylesheet" href="vistas/css/plugins/jdSlider.css">
 
   <!-- Select2 -->
@@ -69,8 +69,16 @@ $usuario = ControladorUsuarios::ctrMostrarUsuarios($item, $valor);
   <link rel="stylesheet" href="vistas/css/plugins/dataTables.bootstrap4.min.css"> 
   <link rel="stylesheet" href="vistas/css/plugins/responsive.bootstrap.min.css">
 
-    <!-- estilo personalizado -->
-    <link rel="stylesheet" href="vistas/css/style.css">
+  <!-- JQVMap -->
+  <link rel="stylesheet" href="vistas/css/plugins/jquery-jvectormap-1.2.2.css">
+
+  <!-- jQuery jOrg Chart -->
+    <link rel="stylesheet" href="vistas/css/plugins/jquery.jOrgChart.css">
+
+  <!-- estilo personalizado -->
+  <link rel="stylesheet" href="vistas/css/style.css">
+
+
 
     <!--=====================================
   Vínculos JS
@@ -122,6 +130,32 @@ $usuario = ControladorUsuarios::ctrMostrarUsuarios($item, $valor);
   <!-- HLS -->
   <!-- https://poanchen.github.io/blog/2016/11/17/how-to-play-mp4-video-using-hls -->
   <script src="vistas/js/plugins/hls.min.js"></script>
+
+  <!-- Pinterest Grid --> 
+  <!-- https://www.jqueryscript.net/layout/Simple-jQuery-Plugin-To-Create-Pinterest-Style-Grid-Layout-Pinterest-Grid.html -->
+  <script src="vistas/js/plugins/pinterest_grid.js"></script>
+
+  <!-- JQVMap -->
+  <!-- https://www.10bestdesign.com/jqvmap/ -->
+  <script src="vistas/js/plugins/jquery-jvectormap-1.2.2.min.js"></script>
+  <script src="vistas/js/plugins/jquery-jvectormap-world-mill-en.js"></script>
+
+  <!-- jQuery Knob Chart -->
+  <!-- http://anthonyterrien.com/demo/knob/ -->
+  <script src="vistas/js/plugins/jquery.knob.js"></script>
+
+  <!-- jQuery jOrg Chart -->
+  <!-- https://github.com/wesnolte/jOrgChart--> 
+    <script src="vistas/js/plugins/jquery.jOrgChart.js"></script> 
+
+  <!-- jQuery Number-->
+  <!-- https://plugins.jquery.com/df-number-format/ -->
+  <script src="vistas/js/plugins/jquerynumber.min.js"></script>
+
+  <!-- Preload-->
+  <!-- https://www.jqueryscript.net/loading/Handle-Loading-Progress-jQuery-Nite-Preloader.html -->
+  <script src="vistas/js/plugins/jquery.nite.preloader.js"></script>
+
 
 
 </head>
@@ -197,7 +231,6 @@ include "paginas/modulos/footer.php";
 
 <script src="vistas/js/inicio.js"></script>
 <script src="vistas/js/usuarios.js"></script>
-<script src="vistas/js/academia.js"></script>
 <script src="vistas/js/multinivel.js"></script>
 
 </body>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-04-2022 a las 20:26:28
+-- Tiempo de generación: 21-04-2022 a las 19:03:56
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.6
 
@@ -101,6 +101,7 @@ CREATE TABLE `videos` (
   `titulo_video` text NOT NULL,
   `descripcion_video` text NOT NULL,
   `medios_video` text NOT NULL,
+  `medios_video_mp4` text NOT NULL,
   `imagen_video` text NOT NULL,
   `vista_gratuita` int(11) NOT NULL,
   `fecha_video` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
@@ -110,25 +111,25 @@ CREATE TABLE `videos` (
 -- Volcado de datos para la tabla `videos`
 --
 
-INSERT INTO `videos` (`id_video`, `id_cat`, `titulo_video`, `descripcion_video`, `medios_video`, `imagen_video`, `vista_gratuita`, `fecha_video`) VALUES
-(1, 1, 'Lorem ipsum dolor sit amet', 'Donec maximus nulla a aliquam sollicitudin. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed sagittis diam eu pharetra elementum', 'vistas/videos/cuerpo-activo/01-video/01-video.m3u8', 'vistas/img/cuerpo-activo/01-imagen.jpg', 1, '2022-04-20 17:49:12'),
-(2, 1, 'Lorem ipsum dolor sit amet', 'Donec maximus nulla a aliquam sollicitudin. Interdum et malesuada fames ac ante ipsum primis in faucibus.', 'vistas/videos/cuerpo-activo/02-video/02-video.m3u8', 'vistas/img/cuerpo-activo/02-imagen.jpg', 1, '2022-04-20 18:00:39'),
-(3, 1, 'Lorem ipsum dolor sit amet', 'Donec maximus nulla a aliquam sollicitudin. Interdum et malesuada fames ac ante ipsum primis in faucibus.', 'vistas/videos/cuerpo-activo/03-video/03-video.m3u8', 'vistas/img/cuerpo-activo/03-imagen.jpg', 1, '2022-04-20 18:00:48'),
-(4, 1, 'Lorem ipsum dolor sit amet', 'Donec maximus nulla a aliquam sollicitudin. Interdum et malesuada fames ac ante ipsum primis in faucibus.', 'vistas/videos/cuerpo-activo/04-video/04-video.m3u8', 'vistas/img/cuerpo-activo/04-imagen.jpg', 0, '2022-04-20 18:01:06'),
-(5, 1, 'Lorem ipsum dolor sit amet', 'Donec maximus nulla a aliquam sollicitudin. Interdum et malesuada fames ac ante ipsum primis in faucibus.', 'vistas/videos/cuerpo-activo/05-video/05-video.m3u8', 'vistas/img/cuerpo-activo/05-imagen.jpg', 0, '2022-04-20 18:01:15'),
-(6, 1, 'Lorem ipsum dolor sit amet', 'Donec maximus nulla a aliquam sollicitudin. Interdum et malesuada fames ac ante ipsum primis in faucibus.', 'vistas/videos/cuerpo-activo/06-video/06-video.m3u8', 'vistas/img/cuerpo-activo/06-imagen.jpg', 0, '2022-04-20 18:01:24'),
-(7, 2, 'Lorem ipsum dolor sit amet', 'Donec maximus nulla a aliquam sollicitudin. Interdum et malesuada fames ac ante ipsum primis in faucibus.', 'vistas/videos/mente-sana/01-video/01-video.m3u8', 'vistas/img/mente-sana/01-imagen.jpg', 1, '2022-04-20 18:08:29'),
-(8, 2, 'Lorem ipsum dolor sit amet', 'Donec maximus nulla a aliquam sollicitudin. Interdum et malesuada fames ac ante ipsum primis in faucibus.', 'vistas/videos/mente-sana/02-video/02-video.m3u8', 'vistas/img/mente-sana/02-imagen.jpg', 1, '2022-04-20 18:08:40'),
-(9, 2, 'Lorem ipsum dolor sit amet', 'Donec maximus nulla a aliquam sollicitudin. Interdum et malesuada fames ac ante ipsum primis in faucibus.', 'vistas/videos/mente-sana/03-video/03-video.m3u8', 'vistas/img/mente-sana/03-imagen.jpg', 1, '2022-04-20 18:08:47'),
-(10, 2, 'Lorem ipsum dolor sit amet', 'Donec maximus nulla a aliquam sollicitudin. Interdum et malesuada fames ac ante ipsum primis in faucibus.', 'vistas/videos/mente-sana/04-video/04-video.m3u8', 'vistas/img/mente-sana/04-imagen.jpg', 0, '2022-04-20 18:09:06'),
-(11, 2, 'Lorem ipsum dolor sit amet', 'Donec maximus nulla a aliquam sollicitudin. Interdum et malesuada fames ac ante ipsum primis in faucibus.', 'vistas/videos/mente-sana/05-video/05-video.m3u8', 'vistas/img/mente-sana/05-imagen.jpg', 0, '2022-04-20 18:09:15'),
-(12, 2, 'Lorem ipsum dolor sit amet', 'Donec maximus nulla a aliquam sollicitudin. Interdum et malesuada fames ac ante ipsum primis in faucibus.', 'vistas/videos/mente-sana/06-video/06-video.m3u8', 'vistas/img/mente-sana/06-imagen.jpg', 0, '2022-04-20 18:10:00'),
-(13, 3, 'Lorem ipsum dolor sit amet', 'Donec maximus nulla a aliquam sollicitudin. Interdum et malesuada fames ac ante ipsum primis in faucibus.', 'vistas/videos/espiritu-libre/01-video/01-video.m3u8', 'vistas/img/espiritu-libre/01-imagen.jpg', 1, '2022-04-20 18:11:41'),
-(14, 3, 'Lorem ipsum dolor sit amet', 'Donec maximus nulla a aliquam sollicitudin. Interdum et malesuada fames ac ante ipsum primis in faucibus.', 'vistas/videos/espiritu-libre/02-video/02-video.m3u8', 'vistas/img/espiritu-libre/02-imagen.jpg', 1, '2022-04-20 18:13:40'),
-(15, 3, 'Lorem ipsum dolor sit amet', 'Donec maximus nulla a aliquam sollicitudin. Interdum et malesuada fames ac ante ipsum primis in faucibus.', 'vistas/videos/espiritu-libre/03-video/03-video.m3u8', 'vistas/img/espiritu-libre/03-imagen.jpg', 1, '2022-04-20 18:13:52'),
-(16, 3, 'Lorem ipsum dolor sit amet', 'Donec maximus nulla a aliquam sollicitudin. Interdum et malesuada fames ac ante ipsum primis in faucibus.', 'vistas/videos/espiritu-libre/04-video/04-video.m3u8', 'vistas/img/espiritu-libre/04-imagen.jpg', 0, '2022-04-20 18:14:05'),
-(17, 3, 'Lorem ipsum dolor sit amet', 'Donec maximus nulla a aliquam sollicitudin. Interdum et malesuada fames ac ante ipsum primis in faucibus.', 'vistas/videos/espiritu-libre/05-video/05-video.m3u8', 'vistas/img/espiritu-libre/05-imagen.jpg', 0, '2022-04-20 18:14:15'),
-(18, 3, 'Lorem ipsum dolor sit amet', 'Donec maximus nulla a aliquam sollicitudin. Interdum et malesuada fames ac ante ipsum primis in faucibus.', 'vistas/videos/espiritu-libre/06-video/06-video.m3u8', 'vistas/img/espiritu-libre/06-imagen.jpg', 0, '2022-04-20 18:14:24');
+INSERT INTO `videos` (`id_video`, `id_cat`, `titulo_video`, `descripcion_video`, `medios_video`, `medios_video_mp4`, `imagen_video`, `vista_gratuita`, `fecha_video`) VALUES
+(1, 1, 'Lorem ipsum dolor sit amet', 'Donec maximus nulla a aliquam sollicitudin. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed sagittis diam eu pharetra elementum', 'vistas/videos/cuerpo-activo/01-video/01-video.m3u8', 'vistas/videos/cuerpo-activo/01-video.mp4', 'vistas/img/cuerpo-activo/01-imagen.jpg', 1, '2022-04-21 16:59:25'),
+(2, 1, 'Lorem ipsum dolor sit amet', 'Donec maximus nulla a aliquam sollicitudin. Interdum et malesuada fames ac ante ipsum primis in faucibus.', 'vistas/videos/cuerpo-activo/02-video/02-video.m3u8', 'vistas/videos/cuerpo-activo/02-video.mp4', 'vistas/img/cuerpo-activo/02-imagen.jpg', 1, '2022-04-21 17:00:03'),
+(3, 1, 'Lorem ipsum dolor sit amet', 'Donec maximus nulla a aliquam sollicitudin. Interdum et malesuada fames ac ante ipsum primis in faucibus.', 'vistas/videos/cuerpo-activo/03-video/03-video.m3u8', 'vistas/videos/cuerpo-activo/03-video.mp4', 'vistas/img/cuerpo-activo/03-imagen.jpg', 1, '2022-04-21 17:00:11'),
+(4, 1, 'Lorem ipsum dolor sit amet', 'Donec maximus nulla a aliquam sollicitudin. Interdum et malesuada fames ac ante ipsum primis in faucibus.', 'vistas/videos/cuerpo-activo/04-video/04-video.m3u8', 'vistas/videos/cuerpo-activo/04-video.mp4', 'vistas/img/cuerpo-activo/04-imagen.jpg', 0, '2022-04-21 17:00:20'),
+(5, 1, 'Lorem ipsum dolor sit amet', 'Donec maximus nulla a aliquam sollicitudin. Interdum et malesuada fames ac ante ipsum primis in faucibus.', 'vistas/videos/cuerpo-activo/05-video/05-video.m3u8', 'vistas/videos/cuerpo-activo/05-video.mp4', 'vistas/img/cuerpo-activo/05-imagen.jpg', 0, '2022-04-21 17:00:27'),
+(6, 1, 'Lorem ipsum dolor sit amet', 'Donec maximus nulla a aliquam sollicitudin. Interdum et malesuada fames ac ante ipsum primis in faucibus.', 'vistas/videos/cuerpo-activo/06-video/06-video.m3u8', 'vistas/videos/cuerpo-activo/06-video.mp4', 'vistas/img/cuerpo-activo/06-imagen.jpg', 0, '2022-04-21 17:00:38'),
+(7, 2, 'Lorem ipsum dolor sit amet', 'Donec maximus nulla a aliquam sollicitudin. Interdum et malesuada fames ac ante ipsum primis in faucibus.', 'vistas/videos/mente-sana/01-video/01-video.m3u8', 'vistas/videos/mente-sana/01-video.mp4', 'vistas/img/mente-sana/01-imagen.jpg', 1, '2022-04-21 17:01:06'),
+(8, 2, 'Lorem ipsum dolor sit amet', 'Donec maximus nulla a aliquam sollicitudin. Interdum et malesuada fames ac ante ipsum primis in faucibus.', 'vistas/videos/mente-sana/02-video/02-video.m3u8', 'vistas/videos/mente-sana/02-video.mp4', 'vistas/img/mente-sana/02-imagen.jpg', 1, '2022-04-21 17:01:14'),
+(9, 2, 'Lorem ipsum dolor sit amet', 'Donec maximus nulla a aliquam sollicitudin. Interdum et malesuada fames ac ante ipsum primis in faucibus.', 'vistas/videos/mente-sana/03-video/03-video.m3u8', 'vistas/videos/mente-sana/03-video.mp4', 'vistas/img/mente-sana/03-imagen.jpg', 1, '2022-04-21 17:01:24'),
+(10, 2, 'Lorem ipsum dolor sit amet', 'Donec maximus nulla a aliquam sollicitudin. Interdum et malesuada fames ac ante ipsum primis in faucibus.', 'vistas/videos/mente-sana/04-video/04-video.m3u8', 'vistas/videos/mente-sana/04-video.mp4', 'vistas/img/mente-sana/04-imagen.jpg', 0, '2022-04-21 17:01:35'),
+(11, 2, 'Lorem ipsum dolor sit amet', 'Donec maximus nulla a aliquam sollicitudin. Interdum et malesuada fames ac ante ipsum primis in faucibus.', 'vistas/videos/mente-sana/05-video/05-video.m3u8', 'vistas/videos/mente-sana/05-video.mp4', 'vistas/img/mente-sana/05-imagen.jpg', 0, '2022-04-21 17:01:42'),
+(12, 2, 'Lorem ipsum dolor sit amet', 'Donec maximus nulla a aliquam sollicitudin. Interdum et malesuada fames ac ante ipsum primis in faucibus.', 'vistas/videos/mente-sana/06-video/06-video.m3u8', 'vistas/videos/mente-sana/06-video.mp4', 'vistas/img/mente-sana/06-imagen.jpg', 0, '2022-04-21 17:01:51'),
+(13, 3, 'Lorem ipsum dolor sit amet', 'Donec maximus nulla a aliquam sollicitudin. Interdum et malesuada fames ac ante ipsum primis in faucibus.', 'vistas/videos/espiritu-libre/01-video/01-video.m3u8', 'vistas/videos/espiritu-libre/01-video.mp4', 'vistas/img/espiritu-libre/01-imagen.jpg', 1, '2022-04-21 17:02:13'),
+(14, 3, 'Lorem ipsum dolor sit amet', 'Donec maximus nulla a aliquam sollicitudin. Interdum et malesuada fames ac ante ipsum primis in faucibus.', 'vistas/videos/espiritu-libre/02-video/02-video.m3u8', 'vistas/videos/mente-sana/02-video.mp4', 'vistas/img/espiritu-libre/02-imagen.jpg', 1, '2022-04-21 17:02:22'),
+(15, 3, 'Lorem ipsum dolor sit amet', 'Donec maximus nulla a aliquam sollicitudin. Interdum et malesuada fames ac ante ipsum primis in faucibus.', 'vistas/videos/espiritu-libre/03-video/03-video.m3u8', 'vistas/videos/mente-sana/03-video.mp4', 'vistas/img/espiritu-libre/03-imagen.jpg', 1, '2022-04-21 17:02:29'),
+(16, 3, 'Lorem ipsum dolor sit amet', 'Donec maximus nulla a aliquam sollicitudin. Interdum et malesuada fames ac ante ipsum primis in faucibus.', 'vistas/videos/espiritu-libre/04-video/04-video.m3u8', 'vistas/videos/mente-sana/04-video.mp4', 'vistas/img/espiritu-libre/04-imagen.jpg', 0, '2022-04-21 17:02:39'),
+(17, 3, 'Lorem ipsum dolor sit amet', 'Donec maximus nulla a aliquam sollicitudin. Interdum et malesuada fames ac ante ipsum primis in faucibus.', 'vistas/videos/espiritu-libre/05-video/05-video.m3u8', 'vistas/videos/mente-sana/05-video.mp4', 'vistas/img/espiritu-libre/05-imagen.jpg', 0, '2022-04-21 17:02:47'),
+(18, 3, 'Lorem ipsum dolor sit amet', 'Donec maximus nulla a aliquam sollicitudin. Interdum et malesuada fames ac ante ipsum primis in faucibus.', 'vistas/videos/espiritu-libre/06-video/06-video.m3u8', 'vistas/videos/mente-sana/06-video.mp4', 'vistas/img/espiritu-libre/06-imagen.jpg', 0, '2022-04-21 17:02:56');
 
 --
 -- Índices para tablas volcadas

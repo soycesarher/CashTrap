@@ -49,3 +49,5 @@
   <!-- /.content -->
 
 </div>
+
+<script src="vistas/js/academia.js"></script>

@@ -38,6 +38,7 @@ if(isset($_GET["video"])){
 	$idVideo = $video["id_video"];
 	$posterVideo = $video["imagen_video"];
 	$rutaVideo = $video["medios_video"];
+	$rutaVideoMp4 = $video["medios_video_mp4"];
 	$tituloVideo = $video["titulo_video"];
 
 }else{
@@ -45,6 +46,7 @@ if(isset($_GET["video"])){
 	$idVideo = $academia[0]["id_video"];
 	$posterVideo = $academia[0]["imagen_video"];
 	$rutaVideo = $academia[0]["medios_video"];
+	$rutaVideoMp4 = $academia[0]["medios_video_mp4"];
 	$tituloVideo = $academia[0]["titulo_video"];
 
 }
@@ -87,7 +89,7 @@ if(empty($academia[$numeroClase]["id_video"])){
 
 <div class="card card-default color-palette-box videos">
 
-	<div class="visorVideos" rutaVideo="<?php echo $rutaVideo ?>" numeroClase="<?php echo $numeroClase ?>">
+	<div class="visorVideos" rutaVideo="<?php echo $rutaVideo ?>" rutaVideoMP4="<?php echo $rutaVideoMp4 ?>" numeroClase="<?php echo $numeroClase ?>">
 
 		<h5 class="text-white p-2 p-md-3 text-light w-100 d-flex"><?php echo $numeroClase.". ". $tituloVideo ?>
 			
