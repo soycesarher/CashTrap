@@ -54,9 +54,9 @@ if(count($red) != 0){
 
 		<div class="card-body">
 
-			<!-- <table class="table table-bordered table-striped dt-responsive tablaUninivel" width="100%"> -->
+			<table class="table table-bordered table-striped dt-responsive tablaUninivel" width="100%">
 
-			<table class="table table-bordered table-striped" width="100%">
+			<!-- <table class="table table-bordered table-striped" width="100%"> -->
 				
 				<thead>
 

@@ -48,8 +48,8 @@ $usuarios = ControladorUsuarios::ctrMostrarusuarios($item, $valor);
 
       <div class="card-body">
         
-        <!-- <table class="table table-striped table-bordered dt-responsive tablaUsuarios"> -->
-        <table class="table table-striped table-bordered">
+        <!-- <table class="table table-striped table-bordered dt-responsive tablaUsuarios" width="100%"> -->
+        <table class="table table-striped table-bordered dt-responsive tablaUsuarios" width="100%">
 
           <thead>
             <tr>
