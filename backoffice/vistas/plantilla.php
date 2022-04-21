@@ -198,6 +198,7 @@ include "paginas/modulos/footer.php";
 <script src="vistas/js/inicio.js"></script>
 <script src="vistas/js/usuarios.js"></script>
 <script src="vistas/js/academia.js"></script>
+<script src="vistas/js/multinivel.js"></script>
 
 </body>
 
