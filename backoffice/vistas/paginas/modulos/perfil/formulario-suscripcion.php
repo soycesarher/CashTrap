@@ -511,28 +511,56 @@ if(isset($_GET["subscription_id"])){
 								"firma" => $firma,
 								"fecha_contrato" => $fechaInicial);
 
-					$iniciarSuscripcion = ControladorUsuarios::ctrIniciarSuscripcion($datos);
+					/*=============================================
+			  		REGISTRO UNINIVEL
+			  		=============================================*/
 
-					if($iniciarSuscripcion == "ok"){
+			  		if($_COOKIE["red"] == "uninivel"){
 
-						echo'<script>
+			  			// Validar comisión
+			  			if($patrocinador == $_COOKIE["patrocinador"]){
 
-								swal({
-										type:"success",
-									  	title: "¡La suscripción se ha hecho correctamente!",
-									  	text: "¡Bienvenido a nuestro programa de afiliados, ahora puede comenzar a ganar dinero con nosotros, visite nuestro plan de compensación!",
-									  	showConfirmButton: true,
-										confirmButtonText: "Cerrar"
-									  
-								}).then(function(result){
+			  				$porcentaje = 1;
 
-										if(result.value){   
-										    window.location = "'.$ruta.'backoffice/perfil";	
-										  } 
-								});
+			  			}else{
 
-							</script>';
-					}
+			  				$porcentaje = 0.4;
+			  			}
+
+			  			$datosUninivel = array("usuario_red" => $usuario["id_usuario"],
+			  								   "patrocinador_red" => $patrocinador,
+			  								   "periodo_comision"  => $valorSuscripcion*$porcentaje,
+			  								   "periodo_venta" => $valorSuscripcion);
+
+			  			$registroUninivel = ControladorMultinivel::ctrRegistroUninivel($datosUninivel);
+
+			  			$iniciarSuscripcion = ControladorUsuarios::ctrIniciarSuscripcion($datos);
+
+			  			if($iniciarSuscripcion == "ok" &&  $registroUninivel == "ok"){
+
+							echo'<script>
+
+									swal({
+											type:"success",
+										  	title: "¡La suscripción se ha hecho correctamente!",
+										  	text: "¡Bienvenido a nuestro programa de afiliados, ahora puede comenzar a ganar dinero con nosotros, visite nuestro plan de compensación!",
+										  	showConfirmButton: true,
+											confirmButtonText: "Cerrar"
+										  
+									}).then(function(result){
+
+											if(result.value){   
+											    window.location = "'.$ruta.'backoffice/perfil";	
+											  } 
+									});
+
+								</script>';
+
+							return;
+						  	
+						}
+
+			  		}
 
 				}else{
 

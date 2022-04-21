@@ -317,8 +317,6 @@ $(".cancelarSuscripcion").click(function(){
 
 				$.ajax(settings2).done(function (response) {
 
-					if(response = "undefined"){
-
 				 		var datos = new FormData();
 						datos.append("idUsuario", idUsuario);
 
@@ -344,7 +342,7 @@ $(".cancelarSuscripcion").click(function(){
 									}).then(function(result){
 
 											if(result.value){   
-											    window.location = "http://cashtrap.com/backoffice/perfil";
+											    window.location = "perfil";
 											  } 
 									});
 													
@@ -353,8 +351,6 @@ $(".cancelarSuscripcion").click(function(){
 							}
 
 						})								
-
-				 	}
 
 				});
 

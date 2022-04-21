@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-04-2022 a las 19:03:56
+-- Tiempo de generación: 21-04-2022 a las 21:28:41
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.6
 
@@ -49,6 +49,29 @@ INSERT INTO `categorias` (`id_categoria`, `nombre_categoria`, `ruta_categoria`, 
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `red_uninivel`
+--
+
+CREATE TABLE `red_uninivel` (
+  `id_uninivel` int(11) NOT NULL,
+  `usuario_red` int(11) NOT NULL,
+  `patrocinador_red` text NOT NULL,
+  `periodo_comision` float NOT NULL,
+  `periodo_venta` float NOT NULL,
+  `fecha_uninivel` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `red_uninivel`
+--
+
+INSERT INTO `red_uninivel` (`id_uninivel`, `usuario_red`, `patrocinador_red`, `periodo_comision`, `periodo_venta`, `fecha_uninivel`) VALUES
+(1, 23, 'cashtrap-afiliado', 10, 10, '2022-04-21 19:14:51'),
+(2, 24, 'cesar-hernandez-23', 10, 10, '2022-04-21 19:18:55');
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `usuarios`
 --
 
@@ -82,12 +105,8 @@ CREATE TABLE `usuarios` (
 
 INSERT INTO `usuarios` (`id_usuario`, `perfil`, `nombre`, `email`, `password`, `suscripcion`, `id_suscripcion`, `ciclo_pago`, `vencimiento`, `verificacion`, `email_encriptado`, `foto`, `enlace_afiliado`, `patrocinador`, `paypal`, `pais`, `codigo_pais`, `telefono_movil`, `firma`, `fecha_contrato`, `fecha`) VALUES
 (1, 'admin', 'cashtrap', 'admin@cashtrap.com', 'admin', 1, NULL, NULL, NULL, 1, NULL, NULL, 'cashtrap-afiliado', NULL, 'soycesarher@gmail.com', NULL, NULL, NULL, NULL, NULL, '2022-04-14 18:55:23'),
-(4, 'usuario', 'Cesar', 'imcesarher@gmail.com', '123456', 0, 'I-PNENBCYR4419', NULL, '2022-05-18', 1, '5c1bce851e34b54f1480da216a7d384c', 'vistas/img/usuarios/4/450.jpg', 'cesar-4', 'cashtrap-afiliado', 'sb-04sxl15100009@personal.example.com', 'Israel', 'IL', '+972 (444) 444-4444', NULL, NULL, '2022-04-14 19:55:11'),
-(5, 'usuario', 'Andy', 'imandrea@gmail.com', '123456', 0, NULL, NULL, NULL, 1, '31f6650277d792c6069be1a6ff41f349', 'vistas/img/usuarios/5/839.jpg', NULL, 'cashtrap-afiliado', NULL, NULL, NULL, NULL, NULL, NULL, '2022-04-14 20:05:50'),
-(17, 'usuario', 'Antonio', 'imantonio@gmail.com', '123456', 0, NULL, NULL, NULL, 0, 'f1b3cda9f25632af80ece263847d6c13', NULL, NULL, 'cashtrap-afiliado', NULL, NULL, NULL, NULL, NULL, NULL, '2022-04-16 17:25:09'),
-(18, 'usuario', 'Maria del mar', 'immaria@gmail.com', '123456', 0, NULL, NULL, NULL, 1, '4617bb753ce0f032a92a7222d9f98662', NULL, NULL, 'cesar-4', NULL, NULL, NULL, NULL, NULL, NULL, '2022-04-18 06:02:23'),
-(19, 'usuario', 'Martha Morales', 'immartha@gmail.com', '123456', 0, NULL, NULL, NULL, 1, '19273465974bc04ae9e1a6bd9f4cc97a', NULL, NULL, 'cesar-4', NULL, NULL, NULL, NULL, NULL, NULL, '2022-04-18 18:40:51'),
-(20, 'usuario', 'Clark Ken', 'imsuperman@gmail.com', '123456', 0, NULL, NULL, NULL, 1, '78fd4a1a8246ba067a441da5585c9d03', NULL, NULL, 'cashtrap-afiliado', NULL, NULL, NULL, NULL, NULL, NULL, '2022-04-18 18:46:19');
+(23, 'usuario', 'Cesar Hernandez', 'imcesar@gmail.com', '123456', 1, 'I-9WD8R2T6BT1U', 1, '2022-05-21', 1, 'd46dc768540910fb47a39d5f32cbef5b', NULL, 'cesar-hernandez-23', 'cashtrap-afiliado', 'sb-04sxl15100009@personal.example.com', 'Israel', 'IL', '+972 (333) 333-3333', '<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?><!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\"><svg xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" width=\"217\" height=\"49\"><path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"1\" stroke=\"#333\" fill=\"none\" d=\"M 1 1 c 0.4 0.05 15.16 1.62 23 3 c 21.34 3.77 40.67 7.33 62 12 c 37.11 8.12 70.44 16 107 25 c 8 1.97 23 7 23 7\"/></svg>', '2022-04-21', '2022-04-21 19:13:12'),
+(24, 'usuario', 'Andrea Lopez', 'imandrea@gmail.com', '123456', 1, 'I-CHT5M064B1XN', 1, '2022-05-21', 1, '31f6650277d792c6069be1a6ff41f349', NULL, 'andrea-lopez-24', 'cesar-hernandez-23', 'sb-04sxl15100009@personal.example.com', 'Israel', 'IL', '+972 (222) 222-2222', '<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?><!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\"><svg xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" width=\"191\" height=\"57\"><path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"1\" stroke=\"#333\" fill=\"none\" d=\"M 2 56 c 0.77 -0.33 28.9 -13.91 44 -19 c 16.58 -5.58 33.48 -9.06 51 -13 c 9.8 -2.2 19.12 -3.62 29 -5 c 4.71 -0.66 9.2 -0.9 14 -1 c 11.63 -0.24 23.06 -0.87 34 0 c 5.31 0.42 16.29 4 16 4 c -0.74 0 -27.64 -2.15 -42 -4 c -17.57 -2.27 -33.37 -5.83 -51 -8 c -29.87 -3.68 -57.52 -6.24 -87 -9 l -9 0\"/></svg>', '2022-04-21', '2022-04-21 19:16:32');
 
 -- --------------------------------------------------------
 
@@ -142,6 +161,12 @@ ALTER TABLE `categorias`
   ADD PRIMARY KEY (`id_categoria`);
 
 --
+-- Indices de la tabla `red_uninivel`
+--
+ALTER TABLE `red_uninivel`
+  ADD PRIMARY KEY (`id_uninivel`);
+
+--
 -- Indices de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
@@ -164,10 +189,16 @@ ALTER TABLE `categorias`
   MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
+-- AUTO_INCREMENT de la tabla `red_uninivel`
+--
+ALTER TABLE `red_uninivel`
+  MODIFY `id_uninivel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT de la tabla `videos`
