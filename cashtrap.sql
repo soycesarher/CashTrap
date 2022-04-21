@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-04-2022 a las 21:28:41
+-- Tiempo de generación: 22-04-2022 a las 01:16:12
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.6
 
@@ -106,7 +106,8 @@ CREATE TABLE `usuarios` (
 INSERT INTO `usuarios` (`id_usuario`, `perfil`, `nombre`, `email`, `password`, `suscripcion`, `id_suscripcion`, `ciclo_pago`, `vencimiento`, `verificacion`, `email_encriptado`, `foto`, `enlace_afiliado`, `patrocinador`, `paypal`, `pais`, `codigo_pais`, `telefono_movil`, `firma`, `fecha_contrato`, `fecha`) VALUES
 (1, 'admin', 'cashtrap', 'admin@cashtrap.com', 'admin', 1, NULL, NULL, NULL, 1, NULL, NULL, 'cashtrap-afiliado', NULL, 'soycesarher@gmail.com', NULL, NULL, NULL, NULL, NULL, '2022-04-14 18:55:23'),
 (23, 'usuario', 'Cesar Hernandez', 'imcesar@gmail.com', '123456', 1, 'I-9WD8R2T6BT1U', 1, '2022-05-21', 1, 'd46dc768540910fb47a39d5f32cbef5b', NULL, 'cesar-hernandez-23', 'cashtrap-afiliado', 'sb-04sxl15100009@personal.example.com', 'Israel', 'IL', '+972 (333) 333-3333', '<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?><!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\"><svg xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" width=\"217\" height=\"49\"><path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"1\" stroke=\"#333\" fill=\"none\" d=\"M 1 1 c 0.4 0.05 15.16 1.62 23 3 c 21.34 3.77 40.67 7.33 62 12 c 37.11 8.12 70.44 16 107 25 c 8 1.97 23 7 23 7\"/></svg>', '2022-04-21', '2022-04-21 19:13:12'),
-(24, 'usuario', 'Andrea Lopez', 'imandrea@gmail.com', '123456', 1, 'I-CHT5M064B1XN', 1, '2022-05-21', 1, '31f6650277d792c6069be1a6ff41f349', NULL, 'andrea-lopez-24', 'cesar-hernandez-23', 'sb-04sxl15100009@personal.example.com', 'Israel', 'IL', '+972 (222) 222-2222', '<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?><!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\"><svg xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" width=\"191\" height=\"57\"><path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"1\" stroke=\"#333\" fill=\"none\" d=\"M 2 56 c 0.77 -0.33 28.9 -13.91 44 -19 c 16.58 -5.58 33.48 -9.06 51 -13 c 9.8 -2.2 19.12 -3.62 29 -5 c 4.71 -0.66 9.2 -0.9 14 -1 c 11.63 -0.24 23.06 -0.87 34 0 c 5.31 0.42 16.29 4 16 4 c -0.74 0 -27.64 -2.15 -42 -4 c -17.57 -2.27 -33.37 -5.83 -51 -8 c -29.87 -3.68 -57.52 -6.24 -87 -9 l -9 0\"/></svg>', '2022-04-21', '2022-04-21 19:16:32');
+(24, 'usuario', 'Andrea Lopez', 'imandrea@gmail.com', '123456', 1, 'I-CHT5M064B1XN', 1, '2022-05-21', 1, '31f6650277d792c6069be1a6ff41f349', NULL, 'andrea-lopez-24', 'cesar-hernandez-23', 'sb-04sxl15100009@personal.example.com', 'Israel', 'IL', '+972 (222) 222-2222', '<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?><!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\"><svg xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" width=\"191\" height=\"57\"><path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"1\" stroke=\"#333\" fill=\"none\" d=\"M 2 56 c 0.77 -0.33 28.9 -13.91 44 -19 c 16.58 -5.58 33.48 -9.06 51 -13 c 9.8 -2.2 19.12 -3.62 29 -5 c 4.71 -0.66 9.2 -0.9 14 -1 c 11.63 -0.24 23.06 -0.87 34 0 c 5.31 0.42 16.29 4 16 4 c -0.74 0 -27.64 -2.15 -42 -4 c -17.57 -2.27 -33.37 -5.83 -51 -8 c -29.87 -3.68 -57.52 -6.24 -87 -9 l -9 0\"/></svg>', '2022-04-21', '2022-04-21 19:16:32'),
+(25, 'usuario', 'Yuced Davila', 'imyuced@gmail.com', '123456', 0, NULL, NULL, NULL, 1, '88c295caef063d7bf3bd2f45bf33410d', NULL, NULL, 'cashtrap-afiliado', NULL, NULL, NULL, NULL, NULL, NULL, '2022-04-21 23:12:06');
 
 -- --------------------------------------------------------
 
@@ -198,7 +199,7 @@ ALTER TABLE `red_uninivel`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT de la tabla `videos`

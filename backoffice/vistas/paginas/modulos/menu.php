@@ -1,4 +1,4 @@
-<aside class="main-sidebar sidebar-dark-primary elevation-4">
+<aside class="main-sidebar sidebar-dark-primary elevation-4" style="overflow-x:hidden">
   <!-- Brand Logo -->
   <a href="inicio" class="brand-link">
   <img src="vistas/img/plantilla/icono.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
@@ -27,14 +27,14 @@
       </div>
     </div>
 
-    <!-- Sidebar Menu -->
+   
     <nav class="mt-2">
 
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
-        <!--=====================================
-        Botón Inicio
-        ======================================-->
+      <!--=====================================
+      Botón Inicio
+      ======================================-->
 
         <li class="nav-item">
           <a href="inicio" class="nav-link">
@@ -43,9 +43,9 @@
           </a>
         </li>
 
-        <!--=====================================
-        Botón Mi Perfil
-        ======================================-->
+      <!--=====================================
+      Botón Mi Perfil
+      ======================================-->
 
         <li class="nav-item">
           <a href="perfil" class="nav-link">
@@ -54,9 +54,9 @@
           </a>
         </li>
 
-        <!--=====================================
-        Botón Usuarios
-        ======================================-->
+      <!--=====================================
+      Botón Usuarios
+      ======================================-->
 
         <?php if ($usuario["perfil"] == "admin"): ?>
 
@@ -69,12 +69,12 @@
           
         <?php endif ?>
 
+      
+      <!--=====================================
+      Botón Academia
+      ======================================-->
 
-        <!--=====================================
-        Botón Academia
-        ======================================-->
-
-        <li class="nav-item has-treeview">
+      <li class="nav-item has-treeview">
           <a href="#" class="nav-link">
             <i class="nav-icon fas fa-graduation-cap"></i>
             <p>
@@ -104,9 +104,11 @@
           </ul>
         </li>
 
-        <!--=====================================
-        Botón Redes Multinivel
-        ======================================-->
+      <!--=====================================
+      Botón Redes Multinivel
+      ======================================-->
+
+      <?php if ($usuario["suscripcion"] != 0): ?>
 
         <li class="nav-item has-treeview">
           <a href="#" class="nav-link">
@@ -137,6 +139,8 @@
             </li>
           </ul>
         </li>
+
+
 
        <!--=====================================
         Botón Ingresos
@@ -171,6 +175,8 @@
             </li>
           </ul>
         </li>
+
+         <?php endif ?>
 
         <!--=====================================
         Botón Plan de compensación
