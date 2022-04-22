@@ -73,7 +73,10 @@ $usuario = ControladorUsuarios::ctrMostrarUsuarios($item, $valor);
   <link rel="stylesheet" href="vistas/css/plugins/jquery-jvectormap-1.2.2.css">
 
   <!-- jQuery jOrg Chart -->
-    <link rel="stylesheet" href="vistas/css/plugins/jquery.jOrgChart.css">
+  <link rel="stylesheet" href="vistas/css/plugins/jquery.jOrgChart.css">
+
+  <!-- Morris chart -->
+  <link rel="stylesheet" href="vistas/css/plugins/morris.min.css">
 
   <!-- estilo personalizado -->
   <link rel="stylesheet" href="vistas/css/style.css">
@@ -156,6 +159,11 @@ $usuario = ControladorUsuarios::ctrMostrarUsuarios($item, $valor);
   <!-- https://www.jqueryscript.net/loading/Handle-Loading-Progress-jQuery-Nite-Preloader.html -->
   <script src="vistas/js/plugins/jquery.nite.preloader.js"></script>
 
+  <!-- Morris.js charts -->
+  <!-- https://morrisjs.github.io/morris.js/ -->
+  <script src="vistas/js/plugins/raphael-min.js"></script>
+  <script src="vistas/js/plugins/morris.min.js"></script>
+
 
 
 </head>
@@ -232,6 +240,7 @@ include "paginas/modulos/footer.php";
 <script src="vistas/js/inicio.js"></script>
 <script src="vistas/js/usuarios.js"></script>
 <script src="vistas/js/multinivel.js"></script>
+<script src="vistas/js/ingresos.js"></script>
 
 </body>
 

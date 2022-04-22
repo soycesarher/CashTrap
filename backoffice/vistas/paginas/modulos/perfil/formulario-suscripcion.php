@@ -518,7 +518,7 @@ if(isset($_GET["subscription_id"])){
 			  		if($_COOKIE["red"] == "uninivel"){
 
 			  			// Validar comisión
-			  			if($patrocinador == $_COOKIE["patrocinador"]){
+			  			if($patrocinador == "cashtrap-afiliado"){
 
 			  				$porcentaje = 1;
 

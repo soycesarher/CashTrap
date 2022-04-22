@@ -496,4 +496,16 @@ class ControladorMultinivel{
 
 	}
 
+	/*=============================================
+	MOSTRAR PAGOS RED
+	=============================================*/
+
+	static public function ctrMostrarPagosRed($tabla, $item, $valor){
+
+		$respuesta = ModeloMultinivel::mdlMostrarPagosRed($tabla, $item, $valor);
+
+		return $respuesta;
+
+	}
+
 }

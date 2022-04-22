@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-04-2022 a las 03:46:48
+-- Tiempo de generación: 22-04-2022 a las 21:33:33
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.6
 
@@ -49,6 +49,29 @@ INSERT INTO `categorias` (`id_categoria`, `nombre_categoria`, `ruta_categoria`, 
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `pagos_uninivel`
+--
+
+CREATE TABLE `pagos_uninivel` (
+  `id_pago` int(11) NOT NULL,
+  `id_pago_paypal` text NOT NULL,
+  `usuario_pago` int(11) NOT NULL,
+  `periodo` text NOT NULL,
+  `periodo_comision` float NOT NULL,
+  `periodo_venta` float NOT NULL,
+  `fecha_pago` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `pagos_uninivel`
+--
+
+INSERT INTO `pagos_uninivel` (`id_pago`, `id_pago_paypal`, `usuario_pago`, `periodo`, `periodo_comision`, `periodo_venta`, `fecha_pago`) VALUES
+(1, '83TEPJXBQJXZE', 27, '2022-03-21 a 2022-04-21', 4, 10, '2022-04-22 19:29:40');
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `red_uninivel`
 --
 
@@ -66,9 +89,8 @@ CREATE TABLE `red_uninivel` (
 --
 
 INSERT INTO `red_uninivel` (`id_uninivel`, `usuario_red`, `patrocinador_red`, `periodo_comision`, `periodo_venta`, `fecha_uninivel`) VALUES
-(1, 23, 'cashtrap-afiliado', 10, 10, '2022-04-21 19:14:51'),
-(2, 24, 'cesar-hernandez-23', 10, 10, '2022-04-21 19:18:55'),
-(3, 26, 'cesar-hernandez-23', 10, 10, '2022-04-22 01:44:38');
+(4, 27, 'cashtrap-afiliado', 10, 10, '2022-04-22 18:47:57'),
+(5, 28, 'cesar-hernandez-27', 4, 10, '2022-04-22 18:50:44');
 
 -- --------------------------------------------------------
 
@@ -106,10 +128,8 @@ CREATE TABLE `usuarios` (
 
 INSERT INTO `usuarios` (`id_usuario`, `perfil`, `nombre`, `email`, `password`, `suscripcion`, `id_suscripcion`, `ciclo_pago`, `vencimiento`, `verificacion`, `email_encriptado`, `foto`, `enlace_afiliado`, `patrocinador`, `paypal`, `pais`, `codigo_pais`, `telefono_movil`, `firma`, `fecha_contrato`, `fecha`) VALUES
 (1, 'admin', 'cashtrap', 'admin@cashtrap.com', 'admin', 1, NULL, NULL, NULL, 1, NULL, NULL, 'cashtrap-afiliado', NULL, 'soycesarher@gmail.com', NULL, NULL, NULL, NULL, NULL, '2022-04-14 18:55:23'),
-(23, 'usuario', 'Cesar Hernandez', 'imcesar@gmail.com', '123456', 1, 'I-9WD8R2T6BT1U', 1, '2022-05-21', 1, 'd46dc768540910fb47a39d5f32cbef5b', NULL, 'cesar-hernandez-23', 'cashtrap-afiliado', 'sb-04sxl15100009@personal.example.com', 'Israel', 'IL', '+972 (333) 333-3333', '<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?><!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\"><svg xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" width=\"217\" height=\"49\"><path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"1\" stroke=\"#333\" fill=\"none\" d=\"M 1 1 c 0.4 0.05 15.16 1.62 23 3 c 21.34 3.77 40.67 7.33 62 12 c 37.11 8.12 70.44 16 107 25 c 8 1.97 23 7 23 7\"/></svg>', '2022-04-21', '2022-04-21 19:13:12'),
-(24, 'usuario', 'Andrea Lopez', 'imandrea@gmail.com', '123456', 1, 'I-CHT5M064B1XN', 1, '2022-05-21', 1, '31f6650277d792c6069be1a6ff41f349', NULL, 'andrea-lopez-24', 'cesar-hernandez-23', 'sb-04sxl15100009@personal.example.com', 'Israel', 'IL', '+972 (222) 222-2222', '<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?><!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\"><svg xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" width=\"191\" height=\"57\"><path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"1\" stroke=\"#333\" fill=\"none\" d=\"M 2 56 c 0.77 -0.33 28.9 -13.91 44 -19 c 16.58 -5.58 33.48 -9.06 51 -13 c 9.8 -2.2 19.12 -3.62 29 -5 c 4.71 -0.66 9.2 -0.9 14 -1 c 11.63 -0.24 23.06 -0.87 34 0 c 5.31 0.42 16.29 4 16 4 c -0.74 0 -27.64 -2.15 -42 -4 c -17.57 -2.27 -33.37 -5.83 -51 -8 c -29.87 -3.68 -57.52 -6.24 -87 -9 l -9 0\"/></svg>', '2022-04-21', '2022-04-21 19:16:32'),
-(25, 'usuario', 'Yuced Davila', 'imyuced@gmail.com', '123456', 0, NULL, NULL, NULL, 1, '88c295caef063d7bf3bd2f45bf33410d', NULL, NULL, 'cashtrap-afiliado', NULL, NULL, NULL, NULL, NULL, NULL, '2022-04-21 23:12:06'),
-(26, 'usuario', 'Litzy Lopez', 'imlitzy@gmail.com', '123456', 1, 'I-6EN33RW6R2Y1', 1, '2022-05-22', 1, '28ac8fcf0f1930d336b2eb96fc83caed', NULL, 'litzy-lopez-26', 'cesar-hernandez-23', 'sb-04sxl15100009@personal.example.com', 'Mexico', 'MX', '+52 (722) 565-6768', '<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?><!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\"><svg xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" width=\"99\" height=\"39\"><path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"1\" stroke=\"#333\" fill=\"none\" d=\"M 7 36 c 1.59 -0.3 84.08 -14.17 91 -17 c 1.74 -0.71 -13.15 -10.31 -20 -12 c -15.66 -3.86 -35.99 -5.56 -53 -6 c -7.76 -0.2 -25.18 2.38 -24 4 c 2.95 4.04 51 33 51 33\"/></svg>', '2022-04-22', '2022-04-22 01:41:05');
+(27, 'usuario', 'Cesar Hernandez', 'imcesar@gmail.com', '123456', 1, 'I-35W0EREPJ9NC', 1, '2022-04-21', 1, 'd46dc768540910fb47a39d5f32cbef5b', NULL, 'cesar-hernandez-27', 'cashtrap-afiliado', 'sb-04sxl15100009@personal.example.com', 'United States', 'US', '+1 (212) 324-4152', '<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?><!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\"><svg xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" width=\"145\" height=\"43\"><path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"1\" stroke=\"#333\" fill=\"none\" d=\"M 14 2 c 2.28 0.46 127.7 25.72 130 26 c 0.9 0.11 -32.15 -11.34 -49 -16 c -15.07 -4.17 -29.96 -7.53 -45 -10 c -7.19 -1.18 -18.42 -3.91 -22 -1 c -4.68 3.8 -9.24 20.92 -10 27 c -0.21 1.65 3.91 3.88 6 5 c 1.95 1.05 4.7 1.65 7 2 c 1.89 0.29 4.32 0.63 6 0 c 5.62 -2.11 12.88 -5.74 18 -9 c 1.63 -1.04 2.53 -3.53 4 -5 c 1.47 -1.47 3.69 -2.46 5 -4 c 2.21 -2.61 5.86 -7.58 6 -9 c 0.07 -0.67 -3.43 -1.14 -5 -1 c -5.63 0.49 -12.21 1.47 -18 3 c -5.43 1.44 -10.65 3.81 -16 6 c -2.1 0.86 -4.22 1.73 -6 3 c -5.1 3.65 -10.47 7.66 -15 12 l -9 11\"/></svg>', '2022-04-22', '2022-04-22 18:45:09'),
+(28, 'usuario', 'Andrea Lopez', 'imandrea@gmail.com', '123456', 1, 'I-L0N8N9H4KC5D', 1, '2022-05-22', 1, '31f6650277d792c6069be1a6ff41f349', NULL, 'andrea-lopez-28', 'cesar-hernandez-27', 'sb-04sxl15100009@personal.example.com', 'United States', 'US', '+1 (272) 456-1221', '<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?><!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\"><svg xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" width=\"132\" height=\"38\"><path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"1\" stroke=\"#333\" fill=\"none\" d=\"M 131 21 c -0.89 -0.16 -33.93 -7.76 -51 -9 c -24.07 -1.75 -57.99 -3.42 -73 0 c -3.9 0.89 -7.89 15.58 -6 18 c 2.45 3.13 15.85 3.86 24 5 c 8.67 1.21 17.24 1.81 26 2 c 6.72 0.15 13.8 0.21 20 -1 c 5.29 -1.03 10.78 -3.71 16 -6 c 3.14 -1.38 6.13 -3.16 9 -5 c 1.78 -1.15 3.89 -2.38 5 -4 c 3.56 -5.22 6.66 -13.22 10 -18 c 0.73 -1.04 2.9 -2 4 -2 c 1.1 0 3.06 1.06 4 2 l 6 8\"/></svg>', '2022-04-22', '2022-04-22 18:49:13');
 
 -- --------------------------------------------------------
 
@@ -164,6 +184,12 @@ ALTER TABLE `categorias`
   ADD PRIMARY KEY (`id_categoria`);
 
 --
+-- Indices de la tabla `pagos_uninivel`
+--
+ALTER TABLE `pagos_uninivel`
+  ADD PRIMARY KEY (`id_pago`);
+
+--
 -- Indices de la tabla `red_uninivel`
 --
 ALTER TABLE `red_uninivel`
@@ -192,16 +218,22 @@ ALTER TABLE `categorias`
   MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
+-- AUTO_INCREMENT de la tabla `pagos_uninivel`
+--
+ALTER TABLE `pagos_uninivel`
+  MODIFY `id_pago` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT de la tabla `red_uninivel`
 --
 ALTER TABLE `red_uninivel`
-  MODIFY `id_uninivel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_uninivel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT de la tabla `videos`
