@@ -141,7 +141,7 @@ if(count($red) != 0){
 
 			<div class="inner">
 
-				<h3 class="text-secondary">Admin</h3>
+				<h3 class="text-secondary">0</h3>
 
 				<p class="text-uppercase">Perfil Administrador</p>
 
@@ -153,7 +153,7 @@ if(count($red) != 0){
 
 			</div>
 		
-			<a href="" class="small-box-footer">Actualizar <i class="fa fa-arrow-circle-right"></i></a>
+			<a href="" class="small-box-footer"><i class="fa fa-arrow-circle-right"></i></a>
 
 		<?php endif ?>
 
