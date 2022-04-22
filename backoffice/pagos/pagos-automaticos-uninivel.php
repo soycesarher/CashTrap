@@ -146,7 +146,134 @@ function pagarUsuario($id_usuario, $enlace_afiliado, $paypal, $vencimiento, $fec
 							   "periodo_venta" => $periodo_venta);	
 				
 				$pagos = ControladorPagos::ctrIngresarPagos($tabla, $datos);
-				echo '<pre>'; print_r($pagos); echo '</pre>';
+
+				if($pagos == "ok"){
+
+					/*=============================================
+					VALIDAR EL ESTADO DE LA SUSCRIPCION
+					=============================================*/			
+
+					$curl3 = curl_init();
+
+					curl_setopt_array($curl3, array(
+					  CURLOPT_URL => 'https://api-m.sandbox.paypal.com/v1/billing/subscriptions/'.$id_suscripcion,
+					  CURLOPT_RETURNTRANSFER => true,
+					  CURLOPT_ENCODING => '',
+					  CURLOPT_MAXREDIRS => 10,
+					  CURLOPT_TIMEOUT => 300,
+					  CURLOPT_FOLLOWLOCATION => true,
+					  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+					  CURLOPT_CUSTOMREQUEST => 'GET',
+					  CURLOPT_HTTPHEADER => array(
+					    'Content-Type: application/json',
+					    'Authorization: Bearer '.$token
+					  ),
+					));
+
+					$response = curl_exec($curl3);
+					$err = curl_error($curl3);
+
+					curl_close($curl3);
+
+					if ($err){
+
+						echo "cURL Error #:" . $err;
+
+					} else {
+
+						$respuesta3 = json_decode($response, true);
+
+						$estado = $respuesta3["status"];
+
+						if ($estado == "ACTIVE") {
+
+							$fechaVencimiento = substr($respuesta3["billing_info"]["next_billing_time"],0, -10);
+							$ciclosPagados = $respuesta3["billing_info"]["cycle_executions"][0]["cycles_completed"];
+
+							/*=============================================
+							ACTUALIZAR SUSCRIPCIÓN TABLA DE USUARIOS
+							=============================================*/
+
+							$traerPatrocinador = ControladorPagos::ctrMostrarUsuarios("enlace_afiliado", $patrocinador);
+
+							if($traerPatrocinador["suscripcion"] == 0){
+
+								$patrocinadorRed = "cashtrap-afiliado";
+								//$porcentaje = 1;
+
+							}else{
+
+								$patrocinadorRed = $traerPatrocinador["enlace_afiliado"];
+
+								/*if($patrocinadorRed == "cashtrap-afiliado"){
+
+									$porcentaje = 1;
+								
+								}else{
+
+									$porcentaje = 0.4;
+
+								}*/
+
+							}
+
+							$datosSuscripcion = array("id_usuario" => $id_usuario,
+													  "patrocinador" => $patrocinadorRed,
+													  "ciclo_pago" => $ciclosPagados,
+													  "vencimiento" => $fechaVencimiento);
+
+							$actualizarSuscripcion = ControladorPagos::ctrActualizarSuscripcion($datosSuscripcion);
+							echo '<pre>Actualizar suscripción: '; print_r($actualizarSuscripcion); echo '</pre>';
+
+							/*=============================================
+							BORRAR PATROCINIOS
+							=============================================*/
+
+							//$borrarPartrocinios = ControladorPagos::ctrBorrarPatrociniosRedUninivel($enlace_afiliado);
+							//echo '<pre>Borrar patrocinios Red: '; print_r($borrarPartrocinios); echo '</pre>';
+
+							/*=============================================
+							ACTUALIZAR TABLA RED
+							=============================================*/
+
+							/*$datosRed = array("usuario_red" => $id_usuario,
+											  "patrocinador_red" => $patrocinadorRed,
+											  "periodo_comision" => 10*$porcentaje,
+											  "periodo_venta" => 10);
+
+							$actualizarRed = ControladorPagos::ctrActualizarRedUninivel($datosRed);
+							echo '<pre>Actualizar Usuario Red: '; print_r($actualizarRed); echo '</pre>';*/
+							
+						} else {
+
+							/*=============================================
+							ACTUALIZAR SUSCRIPCIÓN TABLA DE USUARIOS
+							=============================================*/
+
+							/*$datosSuscripcion = array("id_usuario" => $id_usuario,
+													  "suscripcion" => 0,
+													  "id_suscripcion" => null,
+													  "vencimiento" => null,
+													  "ciclo_pago" => null,
+													  "firma" => null,
+													  "fecha_contrato" => null);
+
+							$cancelarSuscripcion = ControladorPagos::ctrCancelarSuscripcion($datosSuscripcion);
+							echo '<pre>Cancelar suscripcion: '; print_r($cancelarSuscripcion); echo '</pre>';*/
+
+							/*=============================================
+							ELIMINAR USUARIO DE LA RED
+							=============================================*/
+
+							/*$eliminarUsuarioRed = ControladorPagos::ctrEliminarUsuarioRed($id_usuario);
+							echo '<pre>Eliminar Usuario Red: '; print_r($eliminarUsuarioRed); echo '</pre>';*/
+
+						}
+
+					}
+
+				}
+				
 			}
 			
 		}
@@ -194,6 +321,20 @@ Class ControladorPagos{
 	static public function ctrIngresarPagos($tabla, $datos){
 
 		$respuesta = ModeloPagos::mdlIngresarPagos($tabla, $datos);
+
+		return $respuesta;
+
+	}
+
+	/*=============================================
+	Actualizar Suscripción
+	=============================================*/
+
+	static public function ctrActualizarSuscripcion($datos){
+
+		$tabla = "usuarios";
+
+		$respuesta = ModeloPagos::mdlActualizarSuscripcion($tabla, $datos);
 
 		return $respuesta;
 
@@ -300,6 +441,36 @@ class ModeloPagos{
 		$stmt -> bindParam(":periodo", $datos["periodo"], PDO::PARAM_STR);
 		$stmt -> bindParam(":periodo_comision", $datos["periodo_comision"], PDO::PARAM_STR);
 		$stmt -> bindParam(":periodo_venta", $datos["periodo_venta"], PDO::PARAM_STR);
+
+		if($stmt -> execute()){
+
+			return "ok";
+
+		}else{
+
+			echo "\nPDO::errorInfo():\n";
+    		print_r(Conexion::conectar()->errorInfo());
+
+		}
+
+		$stmt-> close();
+
+		$stmt = null;
+
+	}
+
+	/*=============================================
+	Actualizar Suscripción
+	=============================================*/
+
+	static public function mdlActualizarSuscripcion($tabla, $datos){
+
+		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET  ciclo_pago = :ciclo_pago, vencimiento = :vencimiento,  patrocinador = :patrocinador WHERE id_usuario = :id_usuario");
+
+		$stmt -> bindParam(":ciclo_pago", $datos["ciclo_pago"], PDO::PARAM_STR);
+		$stmt -> bindParam(":vencimiento", $datos["vencimiento"], PDO::PARAM_STR);
+		$stmt -> bindParam(":patrocinador", $datos["patrocinador"], PDO::PARAM_STR);
+		$stmt -> bindParam(":id_usuario", $datos["id_usuario"], PDO::PARAM_INT);
 
 		if($stmt -> execute()){
 
