@@ -1,4 +1,40 @@
-<?php 
+<?php
+
+/*=============================================
+HISTÓRICO DE COMISIONES
+=============================================*/
+
+if($usuario["enlace_afiliado"] != $patrocinador){
+
+  $pagos = ControladorMultinivel::ctrMostrarPagosRed("pagos_uninivel", "usuario_pago", $usuario["id_usuario"]);
+
+}else{
+
+  $pagos = ControladorMultinivel::ctrMostrarPagosRed("pagos_uninivel", null, null);
+  
+
+}
+
+$totalComisiones = 0;
+
+foreach ($pagos as $key => $value) {
+
+  if($usuario["enlace_afiliado"] != $patrocinador || $value["periodo_comision"] == $value["periodo_venta"]){
+
+    $totalComisiones += $value["periodo_comision"];
+
+  }else{
+
+    $totalComisiones += $value["periodo_venta"]-$value["periodo_comision"];
+    
+
+  }
+  
+}
+
+/*=============================================
+CANTIDAD DE PERSONAS EN LA RED
+=============================================*/ 
 
 if($usuario["suscripcion"] != 0){
 
@@ -23,6 +59,9 @@ if($usuario["suscripcion"] != 0){
   $red = array();
 }
 
+
+
+
 ?>
 
 <div class="row">
@@ -32,7 +71,7 @@ if($usuario["suscripcion"] != 0){
     <!-- small box -->
     <div class="small-box bg-info">
       <div class="inner">
-        <h3>$ 0</h3>
+        <h3>$ <?php echo number_format($totalComisiones, 2, ",", "."); ?></h3>
 
         <p>Mis comisiones</p>
       </div>
