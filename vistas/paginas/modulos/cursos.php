@@ -1,7 +1,6 @@
 <!--=====================================
 CURSOS
 ======================================-->
-href
 <div class="container-fluid cursos" id="cursos">
 	
 	<div class="container my-3">
@@ -40,7 +39,7 @@ href
 				
 				<video width="100%" poster="img/video02.jpg">
 					
-					<source data-nite-src="videos/video02.mp4" type="video/mp4">
+					<source data-nite-src="videos/video03.mp4" type="video/mp4">
 
 				</video>
 
@@ -86,7 +85,7 @@ href
 				
 				<video width="100%" poster="img/video03.jpg">
 					
-					<source data-nite-src="videos/video03.mp4" type="video/mp4">
+					<source data-nite-src="videos/video02.mp4" type="video/mp4">
 
 				</video>
 
