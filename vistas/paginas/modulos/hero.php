@@ -54,7 +54,7 @@ DISEÑO HERO - CINEMAGRAPH
 
 					<p> Date la oportunidad de hacer crecer y diversificar tu vida financiera.</p>
 
-					<i class="fas fa-money-bill-wave rounded rounded-circle text-white" style="background:#A1B287"></i>
+					<i class="fas fa-money-bill rounded rounded-circle text-white" style="background:#A1B287"></i>
 
 				</div>			
 
