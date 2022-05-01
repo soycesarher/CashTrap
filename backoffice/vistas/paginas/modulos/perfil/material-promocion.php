@@ -20,7 +20,7 @@
 
 						<div class="card-img-overlay">
 							
-							<p class=" bg-dark text-white-50 p-2 mb-2">Alerta 01 (1250px * 835px)</p>
+							<p class=" bg-dark text-white-50 p-2 mb-2">Alerta 01</p>
 							<a href="vistas/img/promocion/photo1.png" class="btn btn-primary btn-sm" target="_blank">Descargar</a>
 
 						</div>
@@ -37,7 +37,7 @@
 
 						<div class="card-img-overlay">
 							
-							<p class=" bg-dark text-white-50 p-2 mb-2">Alerta 02 (1250px * 835px)</p>
+							<p class=" bg-dark text-white-50 p-2 mb-2">Alerta 02</p>
 							<a href="vistas/img/promocion/photo2.png" class="btn btn-primary btn-sm" target="_blank">Descargar</a>
 
 						</div>
@@ -54,7 +54,7 @@
 
 						<div class="card-img-overlay">
 							
-							<p class=" bg-dark text-white-50 p-2 mb-2">Alerta 03 (900px * 1333px)</p>
+							<p class=" bg-dark text-white-50 p-2 mb-2">Alerta 03</p>
 							<a href="vistas/img/promocion/photo3.jpg" class="btn btn-primary btn-sm" target="_blank">Descargar</a>
 
 						</div>
@@ -71,7 +71,7 @@
 
 						<div class="card-img-overlay">
 							
-							<p class=" bg-dark text-white-50 p-2 mb-2">Alerta 04 (1250px * 835px)</p>
+							<p class=" bg-dark text-white-50 p-2 mb-2">Alerta 04</p>
 							<a href="vistas/img/promocion/photo4.jpg" class="btn btn-primary btn-sm" target="_blank">Descargar</a>
 
 						</div>
@@ -88,7 +88,7 @@
 
 						<div class="card-img-overlay">
 							
-							<p class=" bg-dark text-white-50 p-2 mb-2">Alerta 05 (1250px * 835px)</p>
+							<p class=" bg-dark text-white-50 p-2 mb-2">Alerta 05</p>
 							<a href="vistas/img/promocion/photo1.png" class="btn btn-primary btn-sm" target="_blank">Descargar</a>
 
 						</div>
