@@ -18,7 +18,7 @@
 
 					<form method="post" class="mt-3 px-4">
 
-						<p class="text-center py-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi sunt officia unde officiis</p>
+						<p class="text-center py-3">El futuro pertenece a aquellos que creen en la belleza de sus sueños.</p>
 
 						<input type="email" class="form-control my-3 py-3" placeholder="Correo Electrónico" name="ingresoEmail" required>
 

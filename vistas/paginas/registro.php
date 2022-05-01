@@ -28,7 +28,7 @@
 
 						<?php endif ?>
 
-						<p class="text-center py-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi sunt officia unde officiis</p>
+						<p class="text-center py-3">El que se niega a aprender en su juventud se pierde en el pasado y está muerto para el futuro</p>
 
 						<input type="text" class="form-control my-3 py-3" placeholder="Nombre" name="registroNombre" required>
 
