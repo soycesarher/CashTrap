@@ -4,7 +4,7 @@
 		
 		<div class="card-header">
 
-			<h5 class="m-0 text-uppercase text-secondary"><b>Material de promoción</b></h5>
+			<h5 class="m-0 text-uppercase text-secondary"><b>Alertas de Inversión</b></h5>
 
 		</div>
 
