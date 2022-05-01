@@ -6,7 +6,7 @@ PLANES
 
 	<div class="container">
 
-		<p class="text-center text-white lead mx-auto w-50 justify-content-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam deleniti nisi, praesentium, quibusdam porro ab eius voluptatem necessitatibus enim</p>
+		<p class="text-center text-white lead mx-auto w-50 justify-content-center">CashTrap siempre está al alcance de tus manos y te ofrece una versión de prueba gratis para que puedas disfrutar de los servicios que ofrecemos. Elige el plan que más te convenga.</p>
 	
 		 <div class="d-flex flex-column flex-md-row justify-content-center">
 	    	
