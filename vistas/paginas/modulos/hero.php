@@ -22,25 +22,11 @@ DISEÑO HERO - CINEMAGRAPH
 
 				<div class="bg-white text-center py-5 px-4">
 					
-					<h4>Cuerpo Activo</h4>
+					<h4>Educamos</h4> <i class="container"></i>
 
-					<p>Lorem ipsum dolor sit amet consectetur elit</p>
+					<p> Accede a la información correcta y en el momento preciso.</p>
 
-					<i class="fas fa-heart rounded rounded-circle text-white" style="background:#C1AA92"></i>
-
-				</div>			
-
-			</div>
-
-			<div class="col-12 col-lg-4 p-3 p-sm-4">
-
-				<div class="bg-white text-center py-5 px-4">
-					
-					<h4>Mente Sana</h4>
-
-					<p>Lorem ipsum dolor sit amet consectetur elit</p>
-
-					<i class="fas fa-puzzle-piece rounded rounded-circle text-white" style="background:#A17A8C"></i>
+					<i class="fas fa-user-graduate rounded rounded-circle text-white" style="background:#C1AA92"></i>
 
 				</div>			
 
@@ -50,11 +36,25 @@ DISEÑO HERO - CINEMAGRAPH
 
 				<div class="bg-white text-center py-5 px-4">
 					
-					<h4>Espíritu Libre</h4>
+					<h4>Desarrollamos</h4>
 
-					<p>Lorem ipsum dolor sit amet consectetur elit</p>
+					<p> Descubre el poder de tener el control total sobre tus ideas.</p>
 
-					<i class="fas fa-wind rounded rounded-circle text-white" style="background:#A1B287"></i>
+					<i class="fas fa-rocket rounded rounded-circle text-white" style="background:#A17A8C"></i>
+
+				</div>			
+
+			</div>
+
+			<div class="col-12 col-lg-4 p-3 p-sm-4">
+
+				<div class="bg-white text-center py-5 px-4">
+					
+					<h4>Enriquecemos</h4>
+
+					<p> Date la oportunidad de hacer crecer y diversificar tu vida financiera.</p>
+
+					<i class="fas fa-money-bill-wave rounded rounded-circle text-white" style="background:#A1B287"></i>
 
 				</div>			
 
