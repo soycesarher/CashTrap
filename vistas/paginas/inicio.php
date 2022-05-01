@@ -9,4 +9,3 @@ include "modulos/testimonios.php";
 include "modulos/planes.php";
 include "modulos/faq.php";
 include "modulos/footer.php";
- 

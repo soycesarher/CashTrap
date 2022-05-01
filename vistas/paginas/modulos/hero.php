@@ -14,7 +14,7 @@ DISEÑO HERO - CINEMAGRAPH
 
 	<div class="container">
 
-		<h1 class="text-center text-white pb-1 pb-lg-4">Lorem ipsum dolor sit amet</h1>
+		<h1 class="text-center text-white pb-1 pb-lg-4">CashTrap!</h1>
 		
 		<div class="row">
 			
@@ -64,7 +64,7 @@ DISEÑO HERO - CINEMAGRAPH
 		
 		<div class="mx-auto text-center py-3 py-lg-5">
 			
-			<a href="<?php echo $ruta ?>registro"><button class="btn btn-info btn-lg mb-5">Crear cuenta gratis</button></a>
+			<a href="<?php echo $ruta; ?>registro"><button class="btn btn-info btn-lg mb-5">Crear cuenta gratis</button></a>
 
 		</div>	
 		

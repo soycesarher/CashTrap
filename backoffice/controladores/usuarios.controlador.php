@@ -24,7 +24,7 @@ Class ControladorUsuarios{
 							   "email" => $_POST["registroEmail"],
 							   "password" => $_POST["registroPassword"],
 							   "suscripcion" => 0,
-							   "verificacion" => 0,
+							   "verificacion" => 1,
 							   "email_encriptado" => $encriptarEmail,
 							   "patrocinador" => $_POST["patrocinador"]); 
 

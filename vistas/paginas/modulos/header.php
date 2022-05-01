@@ -29,11 +29,11 @@ HEADER
 					<ul class="nav justify-content-lg-left justify-content-xl-end">
 						
 						<li class="nav-item">
-							<a class="nav-link text-white" href="#cursos">Cursos</a>
+							<a class="nav-link text-white" href="#cursos">Academia</a>
 						</li>
 
 						<li class="nav-item">
-							<a class="nav-link text-white" href="#nosotros">Nosotros</a>
+							<a class="nav-link text-white" href="#nosotros">Objetivos</a>
 						</li>
 
 						<li class="nav-item">
@@ -49,10 +49,6 @@ HEADER
 						</li>
 
 						<li class="nav-item">
-							<a class="nav-link text-white" href="#">Blog</a>
-						</li>
-
-						<li class="nav-item">
 							<a class="nav-link text-white" href="#contactenos">Contáctenos</a>
 						</li>
 
@@ -63,26 +59,6 @@ HEADER
 				<!-- IDIOMA E INGRESO -->
 
 				<div class="col-5 col-sm-7 col-md-8 col-lg-2 col-xl-3 p-0 pt-4 pt-lg-2 mt-lg-1 pt-xl-4">
-
-					<!-- IDIOMA -->
-					
-					<div class="ml-xl-4 float-left mt-lg-1 d-none d-lg-block">
-
-						<div class="dropdown">
-
-							<button type="button" class="btn btn-light btn-sm dropdown-toggle" data-toggle="dropdown">
-							ES
-							</button>
-
-							<div class="dropdown-menu">
-
-								<a class="dropdown-item" href="#">EN</a>
-
-							</div>
-
-						</div>
-
-					</div>
 
 					<!-- INGRESO -->
 

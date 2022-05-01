@@ -38,48 +38,26 @@ FOOTER
 				<ul class="p-0 m-0 py-4 d-flex justify-content-center">
 
 					<li>
-						<a href="#" target="_blank"><i class="fab fa-facebook-f lead text-white mx-4"></i></a>
+						<a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f lead text-white mx-4"></i></a>
 					</li>
 
 					<li>
-						<a href="#" target="_blank"><i class="fab fa-instagram lead text-white mx-4"></i></a>
+						<a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram lead text-white mx-4"></i></a>
 					</li>	
 
-					
 					<li>
-						<a href="#" target="_blank"><i class="fab fa-linkedin lead text-white mx-4"></i></a>
+						<a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin lead text-white mx-4"></i></a>
 					</li>
 
 					<li>
-						<a href="#" target="_blank"><i class="fab fa-twitter lead text-white mx-4"></i></a>
+						<a href="https://www.twitter.com/" target="_blank"><i class="fab fa-twitter lead text-white mx-4"></i></a>
 					</li>
 
 					<li>
-						<a href="#" target="_blank"><i class="fab fa-youtube lead text-white mx-4"></i></a>
+						<a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube lead text-white mx-4"></i></a>
 					</li>
 	
 				</ul>
-
-			</div>
-
-			<div class="pt-lg-5 px-lg-5">
-
-				<div class="p-5 visitanos">
-				
-					<h1 class="mt-5">Visítanos</h1>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-
-					<p>
-					Apple inc.<br>
-					Infinte Loop.<br>
-					Cupertino, CA 95014<br>
-					408-996-1010
-					</p>
-			
-					<p class="pb-lg-5">Email: info@apple.com<br>
-					Tel: 1-800-676-2775</p>
-
-				</div>
 
 			</div>
 

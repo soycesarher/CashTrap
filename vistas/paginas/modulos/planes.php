@@ -23,9 +23,9 @@ PLANES
 				</h1>
 
 				<ul class="py-3 px-0">
-					<li>10 Clases</li>
-					<li>5 Descargas</li>
-					<li>24/7 soporte</li>
+					<li>3 Clases</li>
+					<li>1 Alerta DT</li>
+					<li>24/7 Soporte</li>
 
 					<a href="<?php echo $ruta ?>registro"><button class="btn btn-info btn-sm px-5 mt-5">Elegir</button></a>
 				</ul>
@@ -34,20 +34,20 @@ PLANES
 
 	    	<div class="p-2 bg-white pt-5 pb-4 px-5 border text-center ">
 	    		
-				<h4 class="py-3">Estudiantil</h4>
+				<h4 class="py-3">Premium</h4>
 
 				<h1>
 					<span class="small">
 						<strong>$</strong>
 					</span> 
-					200
+					10
 					<span class="small decimal" style="">.00</span>
 				</h1>
 
 				<ul class="py-3 px-0">
 					<li>Clases ilimitadas</li>
-					<li>5 Descargas</li>
-					<li>24/7 soporte</li>
+					<li>5 Alertas DT</li>
+					<li>24/7 Soporte</li>
 
 					<a href="<?php echo $ruta ?>registro"><button class="btn btn-info btn-sm px-5 mt-5">Elegir</button></a>
 				</ul>

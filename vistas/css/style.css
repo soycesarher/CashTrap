@@ -285,11 +285,11 @@ PÁGINA INGRESO Y REGISTRO
 }
 
 .fotoIngreso{
-	background: url(../img/monte.jpg);
+	background: url(../img/ingreso.png);
 }
 
 .fotoRegistro{
-	background: url(../img/038.png);
+	background: url(../img/registro.png);
 }
 
 .fotoIngreso::before, .fotoRegistro::before{
