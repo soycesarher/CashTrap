@@ -103,9 +103,9 @@ if($usuario["suscripcion"] != 0){
     <!-- small box -->
     <div class="small-box bg-primary">
       <div class="inner">
-        <h3>0</h3>
+        <h3>Soporte</h3>
 
-        <p>Mis tickets</p>
+        <p>Hacer una consulta</p>
       </div>
       <div class="icon">
         <i class="fas fa-comments"></i>
