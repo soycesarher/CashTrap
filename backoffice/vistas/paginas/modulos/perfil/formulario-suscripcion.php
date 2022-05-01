@@ -110,9 +110,7 @@
 				<select class="form-control" id="tipoRed">
 					
 					<option value="">Seleccione tipo de red</option>
-					<option value="uninivel">Red UniNivel</option>
-					<option value="binaria">Red Binaria</option>
-					<option value="matriz">Red Matriz 4x4</option>
+					<option value="uninivel">Red Uninivel</option>
 
 				</select>
 
