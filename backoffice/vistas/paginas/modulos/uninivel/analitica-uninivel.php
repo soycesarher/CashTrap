@@ -61,7 +61,7 @@ if(count($red) != 0){
 
 			</div>
 
-			<a href="" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
+			<a href="ingresos-uninivel" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
 
 		</div>
 
@@ -85,7 +85,7 @@ if(count($red) != 0){
 
 			</div>
 
-			<a href="" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
+			<a href="uninivel" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
 			
 		</div>
 
@@ -97,9 +97,9 @@ if(count($red) != 0){
 
 			<div class="inner">
 
-				<h3>0</h3>
+				<h3>Soporte</h3>
 
-				<p class="text-uppercase">Mis tickets</p>
+				<p class="text-uppercase">Hacer una consulta</p>
 
 			</div>
 
@@ -109,7 +109,7 @@ if(count($red) != 0){
 
 			</div>
 
-			<a href="" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
+			<a href="soporte" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
 
 		</div>
 
@@ -135,7 +135,7 @@ if(count($red) != 0){
 
 			</div>
 
-			<a href="" class="small-box-footer">Cancelar Suscripción <i class="fa fa-arrow-circle-right"></i></a>
+			<a href="perfil" class="small-box-footer">Cancelar Suscripción <i class="fa fa-arrow-circle-right"></i></a>
 
 		<?php else: ?>
 

@@ -97,7 +97,7 @@ $usuarios = ControladorUsuarios::ctrMostrarusuarios($item, $valor);
       <!-- /.card-body -->
 
       <div class="card-footer">
-        Footer
+        Cashtrap Admin
       </div>
         <!-- /.card-footer-->
 
