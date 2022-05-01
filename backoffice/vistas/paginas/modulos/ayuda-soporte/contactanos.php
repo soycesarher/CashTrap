@@ -10,11 +10,11 @@
 
 			<?php 
 
-				for($i = 1; $i <= 34; $i++){
+				for($i = 1; $i <= 1; $i++){
 
 					echo '<li>      
                         
-			                 <img src="vistas/img/plan-compensacion/diapositivas/'.$i.'.jpg" class="img-fluid">
+			                 <img src="vistas/img/presentacion-soporte/presentacion/'.$i.'.jpg" class="img-fluid">
 							
 						</li>';
 				}
