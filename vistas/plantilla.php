@@ -10,7 +10,7 @@ $ruta = ControladorRuta::ctrRuta()
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>Academy of life</title>
+	<title>Cashtrap</title>
 
 	<base href="vistas/">
 
