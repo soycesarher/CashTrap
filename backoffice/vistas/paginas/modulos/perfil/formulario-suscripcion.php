@@ -65,7 +65,7 @@
 
 				<div class="input-group"> 
 					<div class="input-group-prepend">
-						<span class="p-2 bg-info rounded-left">http://soycesarher.com/</span>
+						<span class="p-2 bg-info rounded-left">http://cashtrap.com/</span>
 					</div>
 					<input type="text" class="form-control" id="inputAfiliado" value="<?php echo strtolower(str_replace(" ", "-", $usuario["nombre"]))."-".$usuario["id_usuario"] ?>" readonly>
 				</div>
