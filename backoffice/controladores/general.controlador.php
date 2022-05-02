@@ -4,7 +4,7 @@ class ControladorGeneral{
 
 	static public function ctrRuta(){
 
-		return "http://cashtrap.com/";
+		return "http://cashtrap.space/";
 
 	}
 
