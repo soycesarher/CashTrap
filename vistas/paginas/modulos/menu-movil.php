@@ -4,14 +4,14 @@ MENÚ MÓVIL
 
 <div class="menuMovil">
 	
-	<ul class="p-0 m-0 py-4 d-flex justify-content-center">
-
-		<li>
-			<a href="https://youtu.be/DgjCGq3S_is" target="_blank"><i class="fab fa-youtube lead text-white mx-2"></i></a>
-		</li>	
+	<ul class="p-0 m-0 py-4 d-flex justify-content-center">	
 		
 		<li>
 			<i class="fas fa-times lead text-white mr-5"></i>
+		</li>
+
+		<li>
+			<a href="https://youtu.be/DgjCGq3S_is" target="_blank"><i class="fab fa-youtube lead text-white mx-2"></i></a>
 		</li>
 
 		<li>
