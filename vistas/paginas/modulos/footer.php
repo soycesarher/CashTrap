@@ -38,6 +38,10 @@ FOOTER
 				<ul class="p-0 m-0 py-4 d-flex justify-content-center">
 
 					<li>
+						<a href="https://youtu.be/DgjCGq3S_is" target="_blank"><i class="fab fa-youtube lead text-white mx-4"></i></a>
+					</li>
+
+					<li>
 						<a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f lead text-white mx-4"></i></a>
 					</li>
 
@@ -51,10 +55,6 @@ FOOTER
 
 					<li>
 						<a href="https://www.twitter.com/" target="_blank"><i class="fab fa-twitter lead text-white mx-4"></i></a>
-					</li>
-
-					<li>
-						<a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube lead text-white mx-4"></i></a>
 					</li>
 	
 				</ul>

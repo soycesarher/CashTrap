@@ -4,7 +4,11 @@ MENÚ MÓVIL
 
 <div class="menuMovil">
 	
-	<ul class="p-0 m-0 py-4 d-flex justify-content-center">	
+	<ul class="p-0 m-0 py-4 d-flex justify-content-center">
+
+		<li>
+			<a href="https://youtu.be/DgjCGq3S_is" target="_blank"><i class="fab fa-youtube lead text-white mx-2"></i></a>
+		</li>	
 		
 		<li>
 			<i class="fas fa-times lead text-white mr-5"></i>
@@ -24,10 +28,6 @@ MENÚ MÓVIL
 
 		<li>
 			<a href="https://www.twitter.com/" target="_blank"><i class="fab fa-twitter lead text-white mx-2"></i></a>
-		</li>
-
-		<li>
-			<a href="https://www.facebook.com/" target="_blank"><i class="fab fa-youtube lead text-white mx-2"></i></a>
 		</li>
 
 	</ul>
