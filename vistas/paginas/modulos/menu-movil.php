@@ -11,23 +11,23 @@ MENÚ MÓVIL
 		</li>
 
 		<li>
-			<a href="https://youtu.be/DgjCGq3S_is" target="_blank"><i class="fab fa-youtube lead text-white mx-2"></i></a>
+			<i class="fab fa-facebook-f lead text-white ml-5 mx-2"></i>
 		</li>
 
 		<li>
-			<a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f lead text-white ml-5 mx-2"></i></a>
-		</li>
-
-		<li>
-			<a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram lead text-white mx-2"></i></a>
+			<i class="fab fa-instagram lead text-white mx-2"></i>
 		</li>	
 		
 		<li>
-			<a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin lead text-white mx-2"></i></a>
+			<i class="fab fa-linkedin lead text-white mx-2"></i>
 		</li>
 
 		<li>
-			<a href="https://www.twitter.com/" target="_blank"><i class="fab fa-twitter lead text-white mx-2"></i></a>
+			<i class="fab fa-twitter lead text-white mx-2"></i>
+		</li>
+
+		<li>
+			<i class="fab fa-youtube lead text-white mx-2"></i>
 		</li>
 
 	</ul>
