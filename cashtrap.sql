@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-05-2022 a las 04:37:09
+-- Tiempo de generación: 02-05-2022 a las 21:39:54
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.6
 
@@ -42,9 +42,9 @@ CREATE TABLE `categorias` (
 --
 
 INSERT INTO `categorias` (`id_categoria`, `nombre_categoria`, `ruta_categoria`, `descripcion_categoria`, `icono_categoria`, `color_categoria`, `fecha_categoria`) VALUES
-(1, 'Análisis Fundamental', 'cuerpo-activo', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac erat ut mauris egestas molestie. Integer nisi neque, fermentum id rutrum varius, eleifend non sem. Sed sed maximus velit, eget finibus ante.', 'fas fa-user-graduate', 'purple', '2022-05-01 05:44:04'),
-(2, 'Análisis Técnico', 'mente-sana', 'Nulla euismod pellentesque lacus. Nunc dictum, orci eget congue tempus, leo purus rhoncus dui, sit amet accumsan dui mi eu sapien.', 'fas fa-rocket', 'info', '2022-05-01 05:47:12'),
-(3, 'Estrategias de Inversión', 'espiritu-libre', 'Maecenas sit amet urna lacus. Cras imperdiet, urna eget laoreet viverra, neque velit fringilla metus, nec consequat mauris magna in risus.', 'fas fa-money-bill', 'primary', '2022-05-01 05:47:18');
+(1, 'Análisis Fundamental', 'cuerpo-activo', 'Aprende y analiza los mercados financieros desde un punto de vista global.', 'fas fa-user-graduate', 'purple', '2022-05-02 17:55:49'),
+(2, 'Análisis Técnico', 'mente-sana', 'Un buen análisis técnico a la hora de ver los gráficos hace la diferencia.', 'fas fa-rocket', 'info', '2022-05-02 17:55:59'),
+(3, 'Estrategias de Inversión', 'espiritu-libre', 'Invierte con las mejores estrategias de nuestra academia y empieza a crecer tu dinero.', 'fas fa-money-bill', 'primary', '2022-05-02 17:57:05');
 
 -- --------------------------------------------------------
 
