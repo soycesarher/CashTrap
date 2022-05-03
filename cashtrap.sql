@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-05-2022 a las 21:39:54
+-- Tiempo de generación: 03-05-2022 a las 02:02:23
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.6
 
@@ -92,7 +92,8 @@ CREATE TABLE `red_uninivel` (
 INSERT INTO `red_uninivel` (`id_uninivel`, `usuario_red`, `patrocinador_red`, `periodo_comision`, `periodo_venta`, `fecha_uninivel`) VALUES
 (4, 27, 'cashtrap-afiliado', 10, 10, '2022-04-22 21:08:48'),
 (5, 28, NULL, 4, 10, '2022-04-22 21:08:48'),
-(6, 29, 'cesar-hernandez-27', 4, 10, '2022-05-01 20:10:31');
+(6, 29, 'cesar-hernandez-27', 4, 10, '2022-05-01 20:10:31'),
+(7, 30, 'yuced-davila-29', 4, 10, '2022-05-02 23:48:53');
 
 -- --------------------------------------------------------
 
@@ -133,7 +134,8 @@ INSERT INTO `usuarios` (`id_usuario`, `perfil`, `nombre`, `email`, `password`, `
 (27, 'usuario', 'Cesar Hernandez', 'imcesar@gmail.com', '123456', 1, 'I-35W0EREPJ9NC', 1, '2022-05-22', 1, 'd46dc768540910fb47a39d5f32cbef5b', 'vistas/img/usuarios/27/308.jpg', 'cesar-hernandez-27', 'cashtrap-afiliado', 'sb-04sxl15100009@personal.example.com', 'United States', 'US', '+1 (212) 324-4152', '<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?><!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\"><svg xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" width=\"145\" height=\"43\"><path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"1\" stroke=\"#333\" fill=\"none\" d=\"M 14 2 c 2.28 0.46 127.7 25.72 130 26 c 0.9 0.11 -32.15 -11.34 -49 -16 c -15.07 -4.17 -29.96 -7.53 -45 -10 c -7.19 -1.18 -18.42 -3.91 -22 -1 c -4.68 3.8 -9.24 20.92 -10 27 c -0.21 1.65 3.91 3.88 6 5 c 1.95 1.05 4.7 1.65 7 2 c 1.89 0.29 4.32 0.63 6 0 c 5.62 -2.11 12.88 -5.74 18 -9 c 1.63 -1.04 2.53 -3.53 4 -5 c 1.47 -1.47 3.69 -2.46 5 -4 c 2.21 -2.61 5.86 -7.58 6 -9 c 0.07 -0.67 -3.43 -1.14 -5 -1 c -5.63 0.49 -12.21 1.47 -18 3 c -5.43 1.44 -10.65 3.81 -16 6 c -2.1 0.86 -4.22 1.73 -6 3 c -5.1 3.65 -10.47 7.66 -15 12 l -9 11\"/></svg>', '2022-04-22', '2022-04-22 18:45:09'),
 (28, 'usuario', 'Andrea Lopez', 'imandrea@gmail.com', '123456', 1, 'I-L0N8N9H4KC5D', 1, '2022-05-22', 1, '31f6650277d792c6069be1a6ff41f349', 'vistas/img/usuarios/28/828.jpg', 'andrea-lopez-28', 'cesar-hernandez-27', 'sb-04sxl15100009@personal.example.com', 'United States', 'US', '+1 (272) 456-1221', '<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?><!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\"><svg xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" width=\"132\" height=\"38\"><path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"1\" stroke=\"#333\" fill=\"none\" d=\"M 131 21 c -0.89 -0.16 -33.93 -7.76 -51 -9 c -24.07 -1.75 -57.99 -3.42 -73 0 c -3.9 0.89 -7.89 15.58 -6 18 c 2.45 3.13 15.85 3.86 24 5 c 8.67 1.21 17.24 1.81 26 2 c 6.72 0.15 13.8 0.21 20 -1 c 5.29 -1.03 10.78 -3.71 16 -6 c 3.14 -1.38 6.13 -3.16 9 -5 c 1.78 -1.15 3.89 -2.38 5 -4 c 3.56 -5.22 6.66 -13.22 10 -18 c 0.73 -1.04 2.9 -2 4 -2 c 1.1 0 3.06 1.06 4 2 l 6 8\"/></svg>', '2022-04-22', '2022-04-22 18:49:13'),
 (29, 'usuario', 'Yuced Davila', 'imyuced@gmail.com', '123456', 1, 'I-BKPWHPHK2TMK', 1, '2022-06-01', 1, '88c295caef063d7bf3bd2f45bf33410d', 'vistas/img/usuarios/29/898.jpg', 'yuced-davila-29', 'cesar-hernandez-27', 'sb-04sxl15100009@personal.example.com', 'United States', 'US', '+1 (888) 888-8888', '<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?><!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\"><svg xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" width=\"131\" height=\"57\"><path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"1\" stroke=\"#333\" fill=\"none\" d=\"M 55 39 c 0.3 0 11.54 0.56 17 0 c 3.97 -0.41 7.99 -1.75 12 -3 c 6.87 -2.15 13.59 -4.1 20 -7 c 7.58 -3.43 15.9 -7.78 22 -12 c 1.76 -1.22 4.69 -4.96 4 -6 c -1.6 -2.4 -9.29 -7.98 -14 -9 c -9.07 -1.97 -21.08 -1.23 -32 -1 c -21.17 0.45 -42.94 0.24 -62 3 c -7.02 1.01 -17.91 5.03 -21 9 c -2.43 3.13 -1.07 12.81 0 18 c 0.75 3.61 3.7 7.74 6 11 c 1.56 2.21 3.71 4.93 6 6 c 6.84 3.19 16.28 6.13 24 8 c 2.75 0.67 5.91 0.12 9 0 c 5.84 -0.22 11.97 0.3 17 -1 c 4.62 -1.19 10.15 -4.07 14 -7 c 4.01 -3.05 7.04 -8.38 11 -12 c 3.65 -3.33 11.6 -6.98 12 -9 c 0.29 -1.46 -5.91 -5.27 -9 -6 c -7.16 -1.69 -16.4 -1.7 -25 -2 c -20.91 -0.73 -61 -1 -61 -1\"/></svg>', '2022-05-01', '2022-05-01 00:06:55'),
-(30, 'usuario', 'Alison Martinez', 'imalison@gmail.com', '123456', 0, NULL, NULL, NULL, 1, '73e0e0b1627ebbe64e660dfd456aa6b8', 'vistas/img/usuarios/30/764.jpg', NULL, 'yuced-davila-29', NULL, NULL, NULL, NULL, NULL, NULL, '2022-05-01 20:15:56');
+(30, 'usuario', 'Alison Martinez', 'imalison@gmail.com', '123456', 1, 'I-30MTKUKKH4GG', 1, '2022-06-02', 1, '73e0e0b1627ebbe64e660dfd456aa6b8', 'vistas/img/usuarios/30/764.jpg', 'alison-martinez-30', 'yuced-davila-29', 'sb-04sxl15100009@personal.example.com', 'United States', 'US', '+1 (333) 333-3333', '<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?><!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\"><svg xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" width=\"302\" height=\"320\"><path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"1\" stroke=\"#333\" fill=\"none\" d=\"M 137 4 c 0 -0.14 -0.8 -5.8 0 -8 c 1.61 -4.43 6.44 -9.32 8 -14 c 1.56 -4.68 0.89 -10.83 2 -16 c 0.87 -4.06 3.22 -8.1 4 -12 c 0.49 -2.46 -0.64 -5.65 0 -8 c 1.22 -4.48 4.97 -9.26 6 -14 c 2.18 -10.04 2.03 -22.13 4 -32 c 0.55 -2.74 2.98 -5.27 4 -8 c 0.94 -2.51 1.74 -5.35 2 -8 c 0.39 -3.85 -0.42 -8.25 0 -12 c 0.22 -1.97 1.67 -4.04 2 -6 c 0.31 -1.86 -0.35 -4.24 0 -6 c 0.26 -1.31 1.83 -2.68 2 -4 c 0.44 -3.55 -0.42 -8.25 0 -12 c 0.22 -1.97 1.83 -4.02 2 -6 c 0.47 -5.64 0 -18 0 -18\"/><path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"1\" stroke=\"#333\" fill=\"none\" d=\"M 99 36 l 1 1\"/><path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"1\" stroke=\"#333\" fill=\"none\" d=\"M 99 36 c -0.1 0 -4.14 -0.31 -6 0 c -1.96 0.33 -4.16 1.08 -6 2 c -3.4 1.7 -7.43 3.86 -10 6 c -0.99 0.82 -1.16 2.88 -2 4 c -1.07 1.42 -3.53 2.59 -4 4 c -0.66 1.99 -0.48 5.46 0 8 c 1.47 7.85 2.71 17.42 6 24 c 2.83 5.65 8.78 11.56 14 16 c 7.77 6.61 16.93 12.33 26 18 c 7.19 4.49 14.45 8.6 22 12 c 5.71 2.57 11.87 4.25 18 6 c 3.3 0.94 6.67 1.7 10 2 c 3.92 0.36 10.41 1.79 12 0 c 2.44 -2.75 3.69 -12 4 -18 c 1 -19.51 1.02 -40.66 0 -60 c -0.28 -5.31 -1.94 -11.11 -4 -16 c -3.13 -7.43 -7.4 -16.63 -12 -22 c -2.46 -2.88 -8.56 -5.24 -12 -6 c -1.62 -0.36 -4.9 0.9 -6 2 c -1.1 1.1 -1.82 4.02 -2 6 c -0.46 5.01 -0.87 11.05 0 16 c 1.04 5.87 2.53 13.62 6 18 c 8.02 10.14 20.52 21.24 32 30 c 13.65 10.42 28.66 19.02 44 28 c 12.63 7.39 26.14 15.44 38 20 c 3.87 1.49 11.24 1.04 14 0 c 1.25 -0.47 2 -4.19 2 -6 c 0 -2.37 -0.59 -6.36 -2 -8 c -1.99 -2.32 -6.49 -4.11 -10 -6 c -5.38 -2.9 -10.5 -6.08 -16 -8 c -7.6 -2.66 -15.89 -3.63 -24 -6 c -8.29 -2.42 -15.91 -6.43 -24 -8 c -12.22 -2.37 -24.95 -3.36 -38 -4 c -43.04 -2.1 -82.33 -3.06 -126 -4 c -20.78 -0.45 -60 0 -60 0 c 0 0 40.66 1.9 60 0 c 13.92 -1.36 27.55 -7.11 42 -10 c 12.88 -2.58 38 -6 38 -6\"/></svg>', '2022-05-02', '2022-05-01 20:15:56'),
+(31, 'usuario', 'Cristiano Ronaldo', 'imronaldo@gmail.com', '123456', 0, NULL, NULL, NULL, 1, 'b1917bec0c5b432fdea1c8cbeb0cc627', 'vistas/img/usuarios/31/370.jpg', NULL, 'alison-martinez-30', NULL, NULL, NULL, NULL, NULL, NULL, '2022-05-02 23:50:52');
 
 -- --------------------------------------------------------
 
@@ -231,13 +233,13 @@ ALTER TABLE `pagos_uninivel`
 -- AUTO_INCREMENT de la tabla `red_uninivel`
 --
 ALTER TABLE `red_uninivel`
-  MODIFY `id_uninivel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_uninivel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT de la tabla `videos`
