@@ -65,7 +65,7 @@
 
 				<div class="input-group"> 
 					<div class="input-group-prepend">
-						<span class="p-2 bg-info rounded-left">http://cashtrap.space/</span>
+						<span class="p-2 bg-info rounded-left">https://cashtrap.space/</span>
 					</div>
 					<input type="text" class="form-control" id="inputAfiliado" value="<?php echo strtolower(str_replace(" ", "-", $usuario["nombre"]))."-".$usuario["id_usuario"] ?>" readonly>
 				</div>
@@ -402,7 +402,7 @@ if(isset($_GET["subscription_id"])){
 		$curl1 = curl_init();
 
 		curl_setopt_array($curl1, array(
-		  CURLOPT_URL => 'https://api-m.sandbox.paypal.com/v1/oauth2/token',
+		  CURLOPT_URL => 'https://api-m.paypal.com/v1/oauth2/token',
 		  CURLOPT_RETURNTRANSFER => true,
 		  CURLOPT_ENCODING => '',
 		  CURLOPT_MAXREDIRS => 10,
@@ -412,7 +412,7 @@ if(isset($_GET["subscription_id"])){
 		  CURLOPT_CUSTOMREQUEST => 'POST',
 		  CURLOPT_POSTFIELDS => 'grant_type=client_credentials',
 		  CURLOPT_HTTPHEADER => array(
-		    'Authorization: Basic QVlVU2U1SEN0NUk2dV9DOGhFaU4ydThPWmRTMHp0bndiMjItcWs4MXFmNWVYOWNCdjlJNFlYSzBMMkdkc3ZqcklTY1dnMURTNHgybE9wZjA6RUdPcDBlVzN5THYxNUxFeC10NllxZkFqU2FpR0xOZjVBZ2hBdjdGT2VXNkxuazc1WUdVcEJtS3ZMMUFtWXAwRFQyd182bl8tcnRpaTR0V0Q=',
+		    'Authorization: Basic QVNKNUFwY21IUWxXX3VaazQ0SnFjelhpc05RMHVKdlBlVk1RQzI1UXZJREtkb3I1M3ZSTVlURnJNbU1WTjZQRXVVdTVWR3M4QTR6bHRHQkg6RUpYOE1fYmg4MVdhUGVZTGJLQW5jakdLSFlBUk1WVzJoR04wMGpmTGV2X0NmUm9DdWNfU3QtQl95blQ0dDhNbU9UM05SWVlQNGtkeTNPYVA=',
 		    'content-Type: application/x-www-form-urlencoded'
 		  ),
 		));
@@ -439,7 +439,7 @@ if(isset($_GET["subscription_id"])){
 			$curl2 = curl_init();
 
 			curl_setopt_array($curl2, array(
-			  CURLOPT_URL => 'https://api-m.sandbox.paypal.com/v1/billing/subscriptions/'.$_GET["subscription_id"],
+			  CURLOPT_URL => 'https://api-m.paypal.com/v1/billing/subscriptions/'.$_GET["subscription_id"],
 			  CURLOPT_RETURNTRANSFER => true,
 			  CURLOPT_ENCODING => '',
 			  CURLOPT_MAXREDIRS => 10,

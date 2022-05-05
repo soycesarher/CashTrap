@@ -231,7 +231,7 @@ function validarPoliticas(){
 	var politicas = $("#politicas:checked").val();
 
 	if(politicas != "on"){
-
+		/*
 		$("#politicas").before(`
 
 				<div class="alert alert-danger">
@@ -240,7 +240,7 @@ function validarPoliticas(){
 				</div>
 
 			`);
-
+		*/
 		return false;
 	}
 
