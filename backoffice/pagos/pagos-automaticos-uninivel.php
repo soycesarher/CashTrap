@@ -50,7 +50,7 @@ function pagarUsuario($id_usuario, $enlace_afiliado, $paypal, $vencimiento, $fec
 		$curl1 = curl_init();
 
 		curl_setopt_array($curl1, array(
-		  CURLOPT_URL => 'https://api-m.sandbox.paypal.com/v1/oauth2/token',
+		  CURLOPT_URL => 'https://api-m.paypal.com/v1/oauth2/token',
 		  CURLOPT_RETURNTRANSFER => true,
 		  CURLOPT_ENCODING => '',
 		  CURLOPT_MAXREDIRS => 10,
@@ -60,7 +60,7 @@ function pagarUsuario($id_usuario, $enlace_afiliado, $paypal, $vencimiento, $fec
 		  CURLOPT_CUSTOMREQUEST => 'POST',
 		  CURLOPT_POSTFIELDS => 'grant_type=client_credentials',
 		  CURLOPT_HTTPHEADER => array(
-		    'Authorization: Basic QVlVU2U1SEN0NUk2dV9DOGhFaU4ydThPWmRTMHp0bndiMjItcWs4MXFmNWVYOWNCdjlJNFlYSzBMMkdkc3ZqcklTY1dnMURTNHgybE9wZjA6RUdPcDBlVzN5THYxNUxFeC10NllxZkFqU2FpR0xOZjVBZ2hBdjdGT2VXNkxuazc1WUdVcEJtS3ZMMUFtWXAwRFQyd182bl8tcnRpaTR0V0Q=',
+		    'Authorization: Basic QVNKNUFwY21IUWxXX3VaazQ0SnFjelhpc05RMHVKdlBlVk1RQzI1UXZJREtkb3I1M3ZSTVlURnJNbU1WTjZQRXVVdTVWR3M4QTR6bHRHQkg6RUpYOE1fYmg4MVdhUGVZTGJLQW5jakdLSFlBUk1WVzJoR04wMGpmTGV2X0NmUm9DdWNfU3QtQl95blQ0dDhNbU9UM05SWVlQNGtkeTNPYVA=',
 		    'content-Type: application/x-www-form-urlencoded'
 		  ),
 		));
@@ -86,7 +86,7 @@ function pagarUsuario($id_usuario, $enlace_afiliado, $paypal, $vencimiento, $fec
 			$aleatorio = rand(0, 9999);
 
 			curl_setopt_array($curl2, array(
-			  CURLOPT_URL => 'https://api-m.sandbox.paypal.com/v1/payments/payouts',
+			  CURLOPT_URL => 'https://api-m.paypal.com/v1/payments/payouts',
 			  CURLOPT_RETURNTRANSFER => true,
 			  CURLOPT_ENCODING => '',
 			  CURLOPT_MAXREDIRS => 10,
@@ -156,7 +156,7 @@ function pagarUsuario($id_usuario, $enlace_afiliado, $paypal, $vencimiento, $fec
 					$curl3 = curl_init();
 
 					curl_setopt_array($curl3, array(
-					  CURLOPT_URL => 'https://api-m.sandbox.paypal.com/v1/billing/subscriptions/'.$id_suscripcion,
+					  CURLOPT_URL => 'https://api-m.paypal.com/v1/billing/subscriptions/'.$id_suscripcion,
 					  CURLOPT_RETURNTRANSFER => true,
 					  CURLOPT_ENCODING => '',
 					  CURLOPT_MAXREDIRS => 10,
@@ -449,9 +449,9 @@ class Conexion{
 
 	static public function conectar(){
 
-		$link = new PDO("mysql:host=localhost;dbname=cashtrap",
-			            "root",
-			            "");
+		$link = new PDO("mysql:host=162.241.62.137;dbname=soycesa1_cashtrap",
+			            "soycesa1_admin",
+			            "Cesarv1h8v10@");
 
 		$link->exec("set names utf8");
 

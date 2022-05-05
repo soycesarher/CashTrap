@@ -44,7 +44,7 @@ class AjaxUsuarios{
 		$curl1 = curl_init();
 
 		curl_setopt_array($curl1, array(
-		  CURLOPT_URL => 'https://api-m.sandbox.paypal.com/v1/oauth2/token',
+		  CURLOPT_URL => 'https://api-m.paypal.com/v1/oauth2/token',
 		  CURLOPT_RETURNTRANSFER => true,
 		  CURLOPT_ENCODING => '',
 		  CURLOPT_MAXREDIRS => 10,
@@ -54,7 +54,7 @@ class AjaxUsuarios{
 		  CURLOPT_CUSTOMREQUEST => 'POST',
 		  CURLOPT_POSTFIELDS => 'grant_type=client_credentials',
 		  CURLOPT_HTTPHEADER => array(
-		    'Authorization: Basic QVlVU2U1SEN0NUk2dV9DOGhFaU4ydThPWmRTMHp0bndiMjItcWs4MXFmNWVYOWNCdjlJNFlYSzBMMkdkc3ZqcklTY1dnMURTNHgybE9wZjA6RUdPcDBlVzN5THYxNUxFeC10NllxZkFqU2FpR0xOZjVBZ2hBdjdGT2VXNkxuazc1WUdVcEJtS3ZMMUFtWXAwRFQyd182bl8tcnRpaTR0V0Q=',
+		    'Authorization: Basic QVNKNUFwY21IUWxXX3VaazQ0SnFjelhpc05RMHVKdlBlVk1RQzI1UXZJREtkb3I1M3ZSTVlURnJNbU1WTjZQRXVVdTVWR3M4QTR6bHRHQkg6RUpYOE1fYmg4MVdhUGVZTGJLQW5jakdLSFlBUk1WVzJoR04wMGpmTGV2X0NmUm9DdWNfU3QtQl95blQ0dDhNbU9UM05SWVlQNGtkeTNPYVA=',
 		    'content-Type: application/x-www-form-urlencoded'
 		  ),
 		));
@@ -81,7 +81,7 @@ class AjaxUsuarios{
 			$curl2 = curl_init();
 
 			curl_setopt_array($curl2, array(
-			  CURLOPT_URL => 'https://api-m.sandbox.paypal.com/v1/catalogs/products',
+			  CURLOPT_URL => 'https://api-m.paypal.com/v1/catalogs/products',
 			  CURLOPT_RETURNTRANSFER => true,
 			  CURLOPT_ENCODING => '',
 			  CURLOPT_MAXREDIRS => 10,
@@ -123,7 +123,7 @@ class AjaxUsuarios{
 				$curl3 = curl_init();
 
 				curl_setopt_array($curl3, array(
-				  CURLOPT_URL => 'https://api-m.sandbox.paypal.com/v1/billing/plans',
+				  CURLOPT_URL => 'https://api-m.paypal.com/v1/billing/plans',
 				  CURLOPT_RETURNTRANSFER => true,
 				  CURLOPT_ENCODING => '',
 				  CURLOPT_MAXREDIRS => 10,
@@ -185,7 +185,7 @@ class AjaxUsuarios{
 					$curl4 = curl_init();
 
 					curl_setopt_array($curl4, array(
-					  CURLOPT_URL => 'https://api-m.sandbox.paypal.com/v1/billing/subscriptions?',
+					  CURLOPT_URL => 'https://api-m.paypal.com/v1/billing/subscriptions?',
 					  CURLOPT_RETURNTRANSFER => true,
 					  CURLOPT_ENCODING => '',
 					  CURLOPT_MAXREDIRS => 10,

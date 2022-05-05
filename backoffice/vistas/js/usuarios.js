@@ -286,10 +286,10 @@ $(".cancelarSuscripcion").click(function(){
 	    	var settings1 = {
 			  "async": true,
 			  "crossDomain": true,
-			  "url": "https://api.sandbox.paypal.com/v1/oauth2/token",
+			  "url": "https://api-m.paypal.com/v1/oauth2/token",
 			  "method": "POST",
 			  "headers": {
-			  "authorization": "Basic QVlVU2U1SEN0NUk2dV9DOGhFaU4ydThPWmRTMHp0bndiMjItcWs4MXFmNWVYOWNCdjlJNFlYSzBMMkdkc3ZqcklTY1dnMURTNHgybE9wZjA6RUdPcDBlVzN5THYxNUxFeC10NllxZkFqU2FpR0xOZjVBZ2hBdjdGT2VXNkxuazc1WUdVcEJtS3ZMMUFtWXAwRFQyd182bl8tcnRpaTR0V0Q=",
+			  "authorization": "Basic QVNKNUFwY21IUWxXX3VaazQ0SnFjelhpc05RMHVKdlBlVk1RQzI1UXZJREtkb3I1M3ZSTVlURnJNbU1WTjZQRXVVdTVWR3M4QTR6bHRHQkg6RUpYOE1fYmg4MVdhUGVZTGJLQW5jakdLSFlBUk1WVzJoR04wMGpmTGV2X0NmUm9DdWNfU3QtQl95blQ0dDhNbU9UM05SWVlQNGtkeTNPYVA=",
 		    "content-Type": "application/x-www-form-urlencoded"
 			  },
 			  "data": {
@@ -304,7 +304,7 @@ $(".cancelarSuscripcion").click(function(){
 				var settings2 = {
 				  "async": true,
 				  "crossDomain": true,
-				  "url": "https://api-m.sandbox.paypal.com/v1/billing/subscriptions/"+idSuscripcion+"/cancel",
+				  "url": "https://api-m.paypal.com/v1/billing/subscriptions/"+idSuscripcion+"/cancel",
 				  "method": "POST",
 				  "headers": {
 				    "content-type": "application/json",
